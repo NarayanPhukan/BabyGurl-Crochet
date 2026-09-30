@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crochet Tulip Bouquet | BabyGurl Crochet</title>
+  <meta name="description" content="A handmade tulip bouquet that stays beautiful forever. Carefully crocheted with soft combed cotton yarn and finished by hand. Free studio gift wrap across India.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & PDP Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/pdp.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: BabyGurl Crochet Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="document.getElementById('search-modal').showModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist Trigger -->
+        <a href="index.html#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="btn-icon cart-btn-indicator" id="btn-header-cart" onclick="openCartDrawer()" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count" id="header-cart-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       PRODUCT DETAILS AREA
+       ========================================================================= -->
+  <main id="pdp-main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="shop.html">Shop</a>
+        <span>/</span>
+        <a href="shop.html?category=Flowers">Crochet Flowers</a>
+        <span>/</span>
+        <span style="color: var(--color-dark); font-weight: var(--weight-medium);">Crochet Tulip Bouquet</span>
+      </nav>
+
+      <!-- Two-Column Product Area -->
+      <div class="pdp-main-grid">
+
+        <!-- LEFT SIDE: Gallery -->
+        <div class="pdp-gallery-col">
+          <!-- Main Product Image Frame (with Zoom & Touch Swipe) -->
+          <div class="pdp-main-image-frame" id="pdp-main-gallery-frame" title="Click to zoom / swipe to browse">
+            <img id="pdp-active-img" src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet - Hand-wrapped front view" loading="eager" fetchpriority="high">
+            <div class="pdp-zoom-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+              <span>Click to zoom</span>
+            </div>
+          </div>
+
+          <!-- Thumbnails Strip (5 views) -->
+          <div class="pdp-thumbs-row" role="tablist" aria-label="Product views">
+            <!-- 1. Front View -->
+            <button type="button" class="pdp-thumb-btn active" role="tab" aria-label="Front View">
+              <img src="assets/images/tulips.jpg" alt="Front view">
+            </button>
+            <!-- 2. Bouquet Arrangement -->
+            <button type="button" class="pdp-thumb-btn" role="tab" aria-label="Floral arrangement view">
+              <img src="assets/images/bouquet.jpg" alt="Arrangement view">
+            </button>
+            <!-- 3. Yarn Texture Macro Close-up -->
+            <button type="button" class="pdp-thumb-btn" role="tab" aria-label="Yarn texture macro close-up">
+              <img src="assets/images/tulips_texture.jpg" alt="Close-up yarn texture">
+            </button>
+            <!-- 4. Lifestyle Photograph -->
+            <button type="button" class="pdp-thumb-btn" role="tab" aria-label="Lifestyle photograph">
+              <img src="assets/images/sunflower.jpg" alt="Lifestyle photograph">
+            </button>
+            <!-- 5. Packaging Photograph -->
+            <button type="button" class="pdp-thumb-btn" role="tab" aria-label="Packaging photograph">
+              <img src="assets/images/giftbox.jpg" alt="Packaging photograph">
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE: Product Details & Purchase Form -->
+        <div class="pdp-info-col">
+          <!-- Category & Title -->
+          <div>
+            <span class="pdp-cat-eyebrow">Crochet Flowers</span>
+            <h1 class="pdp-product-title">Crochet Tulip Bouquet</h1>
+          </div>
+
+          <!-- Rating & Reviews Link -->
+          <div class="pdp-rating-row">
+            <span class="pdp-stars">★★★★★</span>
+            <strong style="color: var(--color-dark);">4.9</strong>
+            <span style="color: var(--color-dark-subtle);">•</span>
+            <a href="#reviews-section" class="pdp-reviews-link">24 reviews</a>
+          </div>
+
+          <!-- Price Row -->
+          <div class="pdp-price-row">
+            <span class="pdp-price-current" id="pdp-price-val">₹799</span>
+            <span class="pdp-price-original">₹899</span>
+            <span class="badge badge-rose" style="font-size: 0.7rem;">Handmade Savings</span>
+          </div>
+
+          <!-- Availability Indicator (Subtle) -->
+          <div class="pdp-availability-badge">
+            <span class="availability-dot"></span>
+            <strong>Made to Order</strong>
+            <span class="text-subtle">— Usually ready in 3–5 days</span>
+          </div>
+
+          <!-- Short Description -->
+          <p class="pdp-short-desc">
+            A handmade tulip bouquet that stays beautiful forever. Carefully crocheted with soft yarn and finished by hand.
+          </p>
+
+          <!-- Variants: Color Selector -->
+          <div class="pdp-variant-group">
+            <div class="pdp-variant-label">
+              <span>Color:</span>
+              <span class="pdp-variant-selected-val" id="selected-color-label">Pink</span>
+            </div>
+            <div class="pdp-swatches-list">
+              <!-- Pink -->
+              <div class="pdp-swatch-item active" data-color="Pink" role="radio" aria-checked="true" tabindex="0">
+                <span class="pdp-swatch-circle" style="background-color: #D96C8A;"></span>
+                <span class="pdp-swatch-text">Pink</span>
+              </div>
+              <!-- White -->
+              <div class="pdp-swatch-item" data-color="White" role="radio" aria-checked="false" tabindex="0">
+                <span class="pdp-swatch-circle" style="background-color: #FDF9F5; border: 1px solid #E5DCD3;"></span>
+                <span class="pdp-swatch-text">White</span>
+              </div>
+              <!-- Yellow -->
+              <div class="pdp-swatch-item" data-color="Yellow" role="radio" aria-checked="false" tabindex="0">
+                <span class="pdp-swatch-circle" style="background-color: #E8B946;"></span>
+                <span class="pdp-swatch-text">Yellow</span>
+              </div>
+              <!-- Lavender -->
+              <div class="pdp-swatch-item" data-color="Lavender" role="radio" aria-checked="false" tabindex="0">
+                <span class="pdp-swatch-circle" style="background-color: #B8A2C8;"></span>
+                <span class="pdp-swatch-text">Lavender</span>
+              </div>
+              <!-- Mixed -->
+              <div class="pdp-swatch-item" data-color="Mixed" role="radio" aria-checked="false" tabindex="0">
+                <span class="pdp-swatch-circle" style="background: linear-gradient(135deg, #D96C8A 0%, #FDF9F5 35%, #E8B946 70%, #B8A2C8 100%);"></span>
+                <span class="pdp-swatch-text">Mixed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Variants: Size Selector -->
+          <div class="pdp-variant-group">
+            <div class="pdp-variant-label">
+              <span>Bouquet Size:</span>
+              <span class="pdp-variant-selected-val" id="selected-size-label">Small (3 Stems)</span>
+            </div>
+            <div class="pdp-size-list">
+              <button type="button" class="pdp-size-btn active" data-size="Small">Small (3 Stems)</button>
+              <button type="button" class="pdp-size-btn" data-size="Medium">Medium (5 Stems)</button>
+              <button type="button" class="pdp-size-btn" data-size="Large">Large (7 Stems)</button>
+            </div>
+          </div>
+
+          <!-- Quantity Stepper -->
+          <div class="pdp-variant-group">
+            <span class="pdp-variant-label">Quantity:</span>
+            <div class="qty-stepper" style="width: fit-content;">
+              <button type="button" class="qty-btn" onclick="adjustPdpQty(-1)" aria-label="Decrease quantity">−</button>
+              <span class="qty-value" id="pdp-qty-val">1</span>
+              <button type="button" class="qty-btn" onclick="adjustPdpQty(1)" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <!-- Customization / Personal Touch -->
+          <div class="pdp-customization-box">
+            <h3 class="pdp-customization-title">
+              <span>🌸</span>
+              <span>Add a personal touch</span>
+            </h3>
+            <div class="form-group" style="margin-bottom: 8px;">
+              <label class="form-label" for="pdp-order-note" style="font-size: var(--text-xs);">Optional note for our studio maker</label>
+              <input type="text" id="pdp-order-note" class="form-input" placeholder="Add a note for us… (e.g. pastel ribbon preference, stem height)" style="font-size: var(--text-xs); padding: 8px 12px;">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="pdp-gift-msg" style="font-size: var(--text-xs);">Optional handwritten gift message on wooden tag</label>
+              <input type="text" id="pdp-gift-msg" class="form-input" placeholder="Write a gift message (e.g. Happy 21st, Maya! Love always ♡)" style="font-size: var(--text-xs); padding: 8px 12px;">
+            </div>
+          </div>
+
+          <!-- Purchase Actions (Add to Cart dominant, Buy Now, Wishlist) -->
+          <div class="pdp-actions-row">
+            <!-- Add to Cart (Visually Dominant) -->
+            <button type="button" class="btn btn-primary btn-lg pdp-btn-add" onclick="handleAddToCart()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Add to Cart</span>
+            </button>
+
+            <!-- Buy Now -->
+            <button type="button" class="btn btn-secondary btn-lg pdp-btn-buynow" onclick="handleBuyNow()">
+              Buy Now
+            </button>
+
+            <!-- Wishlist Heart Button -->
+            <button type="button" class="pdp-btn-wishlist" id="pdp-wishlist-btn" onclick="togglePdpWishlist()" aria-label="Add to Wishlist" title="Add to Wishlist">
+              <svg id="pdp-wishlist-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Subtle Trust Reassurance Grid -->
+          <div class="pdp-trust-grid">
+            <div class="pdp-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Handmade with care</span>
+            </div>
+            <div class="pdp-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Secure payments</span>
+            </div>
+            <div class="pdp-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <span>Carefully packed</span>
+            </div>
+            <div class="pdp-trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>
+              <span>Made to order</span>
+            </div>
+          </div>
+
+          <!-- Shipping Information (Compact) -->
+          <div class="pdp-shipping-box">
+            <div class="pdp-shipping-row">
+              <span>🚚</span>
+              <span><strong>Handmade & carefully packed</strong> in natural kraft paper and raw-edge linen.</span>
+            </div>
+            <div class="pdp-shipping-row">
+              <span>📦</span>
+              <span><strong>Estimated preparation:</strong> 3–5 days before studio dispatch.</span>
+            </div>
+            <div class="pdp-shipping-row">
+              <span>🇮🇳</span>
+              <span><strong>Shipping across India</strong> via insured express delivery.</span>
+            </div>
+            <div class="pdp-shipping-row">
+              <span>🔒</span>
+              <span><strong>Secure checkout:</strong> UPI, Cards, NetBanking, and Apple Pay.</span>
+            </div>
+            <a href="#shipping-accordion" class="pdp-shipping-link" onclick="document.getElementById('accordion-shipping').open = true;">View shipping information →</a>
+          </div>
+
+          <!-- Expandable Sections (Accordions) -->
+          <div class="pdp-accordions-group">
+            <!-- 1. Description -->
+            <details class="accordion-item" open>
+              <summary>
+                <span>Description</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                Each tulip is carefully crocheted by hand, shaped and finished individually. Because every piece is handmade, tiny variations may occur — making your bouquet uniquely yours. The blooms never wilt, need zero water, and bring a gentle romantic warmth to your favorite space.
+              </div>
+            </details>
+
+            <!-- 2. Materials -->
+            <details class="accordion-item">
+              <summary>
+                <span>Materials</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                • 100% premium combed milk cotton yarn for silky touch and vibrant pastel dye.<br>
+                • Flexible internal botanical craft wire for natural posability and shaping.<br>
+                • Hypoallergenic organic fiberfill for plump, soft petals.<br>
+                • Hand-finished raw linen ribbon and rustic jute twine.
+              </div>
+            </details>
+
+            <!-- 3. Dimensions -->
+            <details class="accordion-item">
+              <summary>
+                <span>Dimensions</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                • Total stem length: ~28 cm (11 inches)<br>
+                • Individual bloom width: ~5.5 cm (2.2 inches)<br>
+                • Bouquet diameter (Small 3-stem): ~16 cm<br>
+                • Fits comfortably in standard bud vases (6–8 inch height recommended).
+              </div>
+            </details>
+
+            <!-- 4. Care Instructions -->
+            <details class="accordion-item">
+              <summary>
+                <span>Care Instructions</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                • Keep dry. Do not immerse in water.<br>
+                • Avoid rough handling or twisting stems forcefully.<br>
+                • Gently remove dust with a soft makeup brush or hairdryer on cool, low setting.<br>
+                • Store away from prolonged direct harsh sunlight to preserve gentle pastel yarn dyes.
+              </div>
+            </details>
+
+            <!-- 5. Shipping & Delivery -->
+            <details class="accordion-item" id="accordion-shipping">
+              <summary>
+                <span>Shipping & Delivery</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                Every bouquet is made fresh in our studio. Please allow 3–5 business days for hand-stitching and gift boxing. Once dispatched, standard delivery across India takes 3–5 business days. Real-time courier tracking is provided via email and SMS.
+              </div>
+            </details>
+
+            <!-- 6. Returns -->
+            <details class="accordion-item">
+              <summary>
+                <span>Returns</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="accordion-content">
+                We take immense pride in our craftsmanship. If your piece arrives damaged or defective, please contact our studio within 7 days of delivery for a replacement or full refund. Custom personalized items with bespoke engraving cannot be returned unless transit-damaged.
+              </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           HANDMADE NOTICE SECTION: “Every piece is a little different ♡”
+           ===================================================================== -->
+      <section class="handmade-charm-section" aria-labelledby="handmade-charm-heading">
+        <div class="handmade-charm-icon">♡</div>
+        <div class="handmade-charm-content">
+          <h3 id="handmade-charm-heading">Every piece is a little different ♡</h3>
+          <p>
+            Because every single petal and leaf is shaped by human hands rather than an automated factory mold, your crochet piece carries tiny, natural subtleties. These slight variations in stitch tension, curves, and bloom silhouettes are not flaws — they are the authentic heartbeat of slow craft that make your piece truly one of a kind.
+          </p>
+          <div class="handmade-variations-pills">
+            <span class="badge badge-linen">✦ Individual Petal Shaping</span>
+            <span class="badge badge-linen">✦ Natural Stitch Character</span>
+            <span class="badge badge-linen">✦ Subtle Fiber Softness</span>
+            <span class="badge badge-linen">✦ Uniquely Yours</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           REVIEWS SECTION (Full Reviews Suite)
+           ===================================================================== -->
+      <section class="pdp-reviews-section" id="reviews-section" aria-labelledby="reviews-heading">
+        <div class="section-header">
+          <span class="section-tag">Customer Love</span>
+          <h2 class="section-title" id="reviews-heading">Customer Reviews</h2>
+          <p class="section-desc">Real stories from people who welcomed this handmade bouquet into their lives.</p>
+        </div>
+
+        <!-- Rating Summary Card -->
+        <div class="reviews-summary-card">
+          <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="reviews-score-big">4.9</div>
+            <div>
+              <div style="color: var(--color-accent); font-size: 1.25rem; letter-spacing: 2px;">★★★★★</div>
+              <div style="font-size: var(--text-sm); color: var(--color-dark-muted); margin-top: 2px;">Based on 24 verified love notes</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="openWriteReviewModal()">
+              <span>✎ Write a Review</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="openWriteReviewModal()">
+              <span>📷 Upload a Photo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Reviews by Rating -->
+        <div class="reviews-filter-pills">
+          <button type="button" class="btn btn-secondary btn-sm review-filter-btn active" data-rating="all">All Reviews (24)</button>
+          <button type="button" class="btn btn-secondary btn-sm review-filter-btn" data-rating="5">5 Stars (22)</button>
+          <button type="button" class="btn btn-secondary btn-sm review-filter-btn" data-rating="4">4 Stars (2)</button>
+        </div>
+
+        <!-- Customer Review Cards -->
+        <div class="reviews-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Review 1 -->
+          <div class="review-card review-detail-card" data-stars="5">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="review-stars">★★★★★</div>
+              <span class="text-subtle">Sept 26, 2026</span>
+            </div>
+            <p class="review-text">
+              “The tulip bouquet took my breath away. You can see every single stitch, and the linen wrapping makes it feel like an heirloom from a vintage European market. Placed it on my writing desk and it brings me joy every morning!”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">C</div>
+              <div>
+                <div class="review-author-name">Chloe Miller</div>
+                <div class="review-item-tag">Verified Buyer • Pink / Small (3 Stems)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card review-detail-card" data-stars="5">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="review-stars">★★★★★</div>
+              <span class="text-subtle">Sept 22, 2026</span>
+            </div>
+            <p class="review-text">
+              “Ordered the mixed color bouquet for my best friend’s birthday. The handwritten wooden tag was so touching. She cried happy tears! Amazing craftsmanship and wrapped with so much care.”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">P</div>
+              <div>
+                <div class="review-author-name">Priya Sharma</div>
+                <div class="review-item-tag">Verified Buyer • Mixed / Medium (5 Stems)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card review-detail-card" data-stars="4">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="review-stars">★★★★☆</div>
+              <span class="text-subtle">Sept 18, 2026</span>
+            </div>
+            <p class="review-text">
+              “Super soft cotton yarn and flawless stitches. Stems were easy to pose in my ceramic vase. Delivery took 5 days since it was made to order, but well worth the patient wait!”
+            </p>
+            <div class="review-author">
+              <div class="review-avatar">A</div>
+              <div>
+                <div class="review-author-name">Aarav Mehta</div>
+                <div class="review-item-tag">Verified Buyer • Lavender / Small (3 Stems)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           RELATED PRODUCTS: “You might also love” (4 items)
+           ===================================================================== -->
+      <section style="padding: var(--space-3xl) 0 var(--space-2xl); border-top: 1px solid var(--border-card);" aria-labelledby="related-heading">
+        <div class="section-header">
+          <span class="section-tag">Handcrafted Companions</span>
+          <h2 class="section-title" id="related-heading">You might also love</h2>
+          <p class="section-desc">More slow-crafted favorites created with the same soft cotton yarn.</p>
+        </div>
+
+        <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <!-- 1. Crochet Daisy Bouquet -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-state-order product-card-badge">Made to Order</span>
+              <img class="product-card-img" src="assets/images/bouquet.jpg" alt="Crochet Daisy Bouquet">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Bouquets</div>
+              <h3 class="product-card-title"><a href="shop.html">Crochet Daisy Bouquet</a></h3>
+              <div class="product-card-yarn-meta">★★★★★ (4.9)</div>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹699</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showPdpToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Flower Keychain -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-state-ready product-card-badge">Ready to Ship</span>
+              <img class="product-card-img" src="assets/images/keychain.jpg" alt="Flower Keychain">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Accessories</div>
+              <h3 class="product-card-title"><a href="shop.html">Flower Keychain</a></h3>
+              <div class="product-card-yarn-meta">★★★★★ (4.8)</div>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹199</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showPdpToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Crochet Sunflower -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-state-ready product-card-badge">Ready to Ship</span>
+              <img class="product-card-img" src="assets/images/sunflower.jpg" alt="Crochet Sunflower">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Home Decor</div>
+              <h3 class="product-card-title"><a href="shop.html">Crochet Sunflower</a></h3>
+              <div class="product-card-yarn-meta">★★★★★ (4.9)</div>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹349</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showPdpToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Mini Crochet Bear -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-state-ready product-card-badge">Ready to Ship</span>
+              <img class="product-card-img" src="assets/images/bear.jpg" alt="Mini Crochet Bear">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Amigurumi</div>
+              <h3 class="product-card-title"><a href="shop.html">Mini Crochet Bear</a></h3>
+              <div class="product-card-yarn-meta">★★★★★ (5.0)</div>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹499</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showPdpToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           RECENTLY VIEWED SECTION
+           ===================================================================== -->
+      <section style="padding: var(--space-xl) 0 var(--space-4xl); border-top: 1px solid var(--border-card);" aria-labelledby="recent-heading">
+        <h3 class="heading-4" id="recent-heading" style="margin-bottom: var(--space-md); color: var(--color-dark-muted);">Recently Viewed</h3>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <!-- Item 1 -->
+          <a href="shop.html" style="display: flex; align-items: center; gap: 12px; background: var(--bg-surface); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 10px 16px; text-decoration: none; box-shadow: var(--shadow-xs);">
+            <img src="assets/images/mushroom.jpg" alt="Mini Mushroom Plushie" style="width: 48px; height: 48px; border-radius: var(--radius-sm); object-fit: cover;">
+            <div>
+              <strong style="font-size: var(--text-sm); color: var(--color-dark);">Mini Mushroom Plushie</strong>
+              <div style="font-size: var(--text-xs); color: var(--color-dark-muted);">₹399 • Made to Order</div>
+            </div>
+          </a>
+          <!-- Item 2 -->
+          <a href="shop.html" style="display: flex; align-items: center; gap: 12px; background: var(--bg-surface); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 10px 16px; text-decoration: none; box-shadow: var(--shadow-xs);">
+            <img src="assets/images/tote.jpg" alt="Crochet Daisy Bag" style="width: 48px; height: 48px; border-radius: var(--radius-sm); object-fit: cover;">
+            <div>
+              <strong style="font-size: var(--text-sm); color: var(--color-dark);">Crochet Daisy Bag</strong>
+              <div style="font-size: var(--text-xs); color: var(--color-dark-muted);">₹999 • Studio Signature</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       MOBILE STICKY BOTTOM PURCHASE BAR
+       ========================================================================= -->
+  <div class="mobile-sticky-purchase-bar" aria-label="Quick purchase bar">
+    <img src="assets/images/tulips.jpg" alt="Tulip bouquet thumb" class="mobile-sticky-thumb">
+    <div class="mobile-sticky-info">
+      <span class="mobile-sticky-title">Crochet Tulip Bouquet</span>
+      <span class="mobile-sticky-price" id="sticky-price-val">₹799</span>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="handleAddToCart()" style="padding: 10px 18px;">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       WRITE REVIEW MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="modal-card" id="write-review-modal" aria-labelledby="write-review-title">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" id="write-review-title" style="margin: 0;">Share Your Love Note ♡</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeWriteReviewModal()">✕</button>
+    </div>
+    <form onsubmit="submitReviewForm(event)">
+      <div class="form-group">
+        <label class="form-label">Your Rating</label>
+        <select class="form-select" required>
+          <option value="5">★★★★★ (5/5) Pure Handmade Magic</option>
+          <option value="4">★★★★☆ (4/5) Loved It</option>
+          <option value="3">★★★☆☆ (3/5) Lovely</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="e.g. Maya J." required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your Review</label>
+        <textarea class="form-textarea" placeholder="How did this handmade piece feel in your home?" required></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Upload a Cozy Photo (Optional)</label>
+        <input type="file" accept="image/*" class="form-input" style="padding: 6px 12px; font-size: var(--text-xs);">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 12px;">
+        Post Love Note ♡
+      </button>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       NATIVE CART DRAWER (<dialog>)
+       ========================================================================= -->
+  <dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-cart-title">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🌸</span>
+        <h3 class="heading-3" id="drawer-cart-title" style="margin: 0;">Your Basket</h3>
+      </div>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeCartDrawer()" aria-label="Close basket">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Free Shipping Perk Meter -->
+      <div class="perk-meter">
+        <div class="perk-meter-text" id="shipping-meter-text">
+          <span>Add ₹201 for Free Studio Gift Wrap</span>
+          <span>80%</span>
+        </div>
+        <div class="perk-meter-bar">
+          <div class="perk-meter-progress" id="shipping-meter-bar" style="width: 80%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-list" id="cart-items-container">
+        <!-- Injected by pdp.js -->
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <span class="text-muted">Subtotal:</span>
+        <span style="font-family: var(--font-editorial); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-dark);" id="cart-subtotal-val">₹799</span>
+      </div>
+      <p class="text-subtle" style="margin-bottom: 14px; text-align: center;">Taxes & free studio packing included</p>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <a href="checkout.html" class="btn btn-primary btn-lg" style="width: 100%; text-align: center;">
+          Checkout Now →
+        </a>
+        <a href="cart.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">
+          View Basket Details
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Search Modal -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handlePdpSearch(this.value)">
+    </div>
+    <div id="pdp-search-results" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 4px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="21"/><path d="M8 12a4 4 0 1 1 8 0c0 2.2-1.3 4-3 4s-1.5-.7-2-1.5L10 18"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="btn-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="collections.html" class="footer-link">Collections</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showPdpToast('Orders dispatched carefully in 3–5 business days 📦'); return false;">Shipping</a>
+        <a href="#" class="footer-link" onclick="showPdpToast('30-day gentle studio returns & exchanges ♡'); return false;">Returns</a>
+        <a href="#" class="footer-link" onclick="showPdpToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+        <a href="#" class="footer-link" onclick="showPdpToast('BabyGurl Crochet studio terms of service'); return false;">Terms</a>
+        <a href="design-system.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Design System Spec ↗</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 NetBanking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Made slowly. Loved forever.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- PDP Interactive Engine -->
+  <script src="js/pdp.js"></script>
+
+  <script>
+    function handlePdpSearch(query) {
+      const res = document.getElementById('pdp-search-results');
+      if (!res) return;
+      if (!query.trim()) {
+        res.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>';
+        return;
+      }
+      res.innerHTML = `
+        <a href="shop.html" style="padding: 10px; background: var(--bg-surface-warm); border-radius: var(--radius-sm); font-size: var(--text-sm); display: block; color: var(--color-dark);">
+          View all results for "<strong>${query}</strong>" in Shop →
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

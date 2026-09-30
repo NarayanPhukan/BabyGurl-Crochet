@@ -1,0 +1,270 @@
+/* ==========================================================================
+   BABYGURL CROCHET — DESIGN SYSTEM DOCUMENTATION STYLES
+   Living brand book, token inspector, and component preview styles.
+   ========================================================================== */
+
+.ds-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.ds-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-card);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.ds-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ds-nav-title {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dark-subtle);
+  font-weight: var(--weight-bold);
+  margin-bottom: 4px;
+}
+
+.ds-nav-link {
+  font-size: var(--text-sm);
+  color: var(--color-dark-muted);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-soft);
+}
+
+.ds-nav-link:hover, .ds-nav-link.active {
+  background: var(--bg-surface-warm);
+  color: var(--color-primary);
+  font-weight: var(--weight-medium);
+}
+
+.ds-main {
+  padding: clamp(24px, 4vw, 56px);
+  max-width: 1080px;
+}
+
+.ds-hero {
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.ds-section {
+  margin-bottom: var(--space-4xl);
+  scroll-margin-top: 32px;
+}
+
+.ds-section-header {
+  margin-bottom: var(--space-xl);
+}
+
+.ds-section-title {
+  font-family: var(--font-editorial);
+  font-size: var(--text-3xl);
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.ds-section-desc {
+  font-size: var(--text-md);
+  color: var(--color-dark-muted);
+  max-width: 720px;
+  line-height: var(--leading-relaxed);
+}
+
+/* --- Color Swatch Card --- */
+.color-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.color-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--duration-fast) var(--ease-soft);
+  cursor: pointer;
+}
+
+.color-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.color-preview {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 8px 12px;
+}
+
+.color-info {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color-name {
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+}
+
+.color-token {
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+}
+
+.color-hex {
+  font-family: monospace;
+  font-size: var(--text-xs);
+  color: var(--color-dark-subtle);
+}
+
+.color-role {
+  font-size: var(--text-xs);
+  color: var(--color-dark-muted);
+  margin-top: 4px;
+  line-height: var(--leading-snug);
+}
+
+/* --- Typography Table & Showcase --- */
+.type-spec-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: baseline;
+  gap: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.type-row:last-child {
+  border-bottom: none;
+}
+
+.type-meta {
+  font-size: var(--text-xs);
+  color: var(--color-dark-subtle);
+  font-family: monospace;
+}
+
+/* --- Component Preview Stage --- */
+.component-stage {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.stage-title {
+  font-family: var(--font-editorial);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--color-dark);
+}
+
+.stage-demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+/* --- Voice & Tone Do/Don't Columns --- */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.voice-box {
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--border-card);
+}
+
+.voice-box.do {
+  background: #F4F8F4;
+  border-color: #CBE0CB;
+}
+
+.voice-box.dont {
+  background: #FCF4F4;
+  border-color: #EBCBCB;
+}
+
+.voice-box h4 {
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-box.do h4 { color: #2E6B34; }
+.voice-box.dont h4 { color: #A62A2A; }
+
+.voice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-dark);
+}
+
+.voice-list li::before {
+  content: '• ';
+  font-weight: bold;
+}
+
+@media (max-width: 840px) {
+  .ds-layout {
+    grid-template-columns: 1fr;
+  }
+  .ds-sidebar {
+    display: none;
+  }
+  .type-row {
+    grid-template-columns: 1fr;
+  }
+  .voice-grid {
+    grid-template-columns: 1fr;
+  }
+}

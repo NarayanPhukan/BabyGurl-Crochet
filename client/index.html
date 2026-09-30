@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BabyGurl Crochet | Little things, handmade with love.</title>
+  <meta name="description" content="BabyGurl Crochet is an independent handmade crochet boutique selling everlasting flowers, amigurumi companions, bags, accessories, and bespoke gifts made one stitch at a time.">
+  <meta name="theme-color" content="#FFF9F5">
+  
+  <!-- Favicon Stitch -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Store Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over $50</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request a Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: BabyGurl Crochet Logo -->
+      <a href="#home" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" data-nav="home" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="#contact" class="nav-link" data-nav="contact" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="openSearchModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist Trigger -->
+        <a href="#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="View Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account Trigger -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="My Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="btn-icon cart-btn-indicator" id="btn-header-cart" onclick="openCartDrawer()" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count" id="header-cart-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Quick Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-bottom-item active" data-nav="home" id="mob-nav-home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="mobile-bottom-item" id="mob-nav-shop">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span>Shop</span>
+    </a>
+    <a href="#custom-crochet" class="mobile-bottom-item" data-nav="custom-crochet" id="mob-nav-custom">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <span>Custom</span>
+    </a>
+    <a href="#wishlist" class="mobile-bottom-item" data-nav="wishlist" id="mob-nav-wishlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span>Wishlist</span>
+    </a>
+    <a href="#cart" class="mobile-bottom-item" onclick="openCartDrawer(); return false;" id="mob-nav-cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+      <span>Cart</span>
+    </a>
+  </nav>
+
+  <!-- =========================================================================
+       HOMEPAGE MAIN CONTENT
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="section-hero" aria-labelledby="hero-headline">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/></svg>
+            <span>Handmade Boutique Studio</span>
+          </div>
+          <h1 class="hero-title" id="hero-headline">
+            Little things, <br>
+            <span class="title-italic">handmade with love.</span>
+          </h1>
+          <p class="hero-desc">
+            Beautiful crochet pieces, lovingly handmade one stitch at a time.
+          </p>
+          <div class="hero-actions">
+            <a href="shop.html" class="btn btn-primary btn-lg" id="cta-hero-shop">
+              Shop Now
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="custom-crochet.html" class="btn btn-secondary btn-lg" id="cta-hero-custom">
+              Create Something Custom
+            </a>
+          </div>
+          <div class="hero-trust-row">
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>100% Cotton Yarn</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Flowers That Never Wilt</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="M12 2v10"/><path d="m17 7-5 5-5-5"/></svg>
+              <span>Plastic-Free Gifting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="assets/images/bouquet.jpg" alt="Realistic artisanal handmade crochet flower bouquet in dusty rose and cream" loading="eager" fetchpriority="high">
+          </div>
+          <div class="hero-floating-card">
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div>
+              <div class="card-title">Hand-stitched in 6 hours</div>
+              <div class="card-subtitle">Zero Wilting • Forever Fresh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FEATURED CATEGORIES -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-xl);" aria-labelledby="cat-heading">
+      <div class="section-header">
+        <span class="section-tag">Collections</span>
+        <h2 class="section-title" id="cat-heading">Find something lovely</h2>
+        <p class="section-desc">Explore our signature handmade creations sculpted one loop at a time.</p>
+      </div>
+
+      <div class="category-visual-grid">
+        <!-- 1. Crochet Flowers -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Flowers')">
+          <img src="assets/images/tulips.jpg" alt="Crochet Flowers category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Everlasting</span>
+            <span class="category-visual-title">Crochet Flowers</span>
+          </div>
+        </a>
+
+        <!-- 2. Amigurumi -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Amigurumi')">
+          <img src="assets/images/bunny.jpg" alt="Amigurumi plushies category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Cozy Friends</span>
+            <span class="category-visual-title">Amigurumi</span>
+          </div>
+        </a>
+
+        <!-- 3. Accessories -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Accessories')">
+          <img src="assets/images/keychain.jpg" alt="Crochet Accessories category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Daily Charms</span>
+            <span class="category-visual-title">Accessories</span>
+          </div>
+        </a>
+
+        <!-- 4. Bags -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Bags')">
+          <img src="assets/images/tote.jpg" alt="Handmade Crochet Bags category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Artisan Totes</span>
+            <span class="category-visual-title">Bags</span>
+          </div>
+        </a>
+
+        <!-- 5. Home Decor -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Home Decor')">
+          <img src="assets/images/sunflower.jpg" alt="Crochet Home Decor category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Warm Spaces</span>
+            <span class="category-visual-title">Home Decor</span>
+          </div>
+        </a>
+
+        <!-- 6. Gift Sets -->
+        <a href="#shop" class="category-visual-card" onclick="renderProducts('Gift Sets')">
+          <img src="assets/images/giftbox.jpg" alt="Crochet Gift Sets category" class="category-visual-img" loading="lazy">
+          <div class="category-visual-overlay">
+            <span class="category-visual-subtitle">Hand-Wrapped</span>
+            <span class="category-visual-title">Gift Sets</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. BEST SELLERS -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-3xl);" aria-labelledby="bestsellers-heading">
+      <div class="section-header">
+        <span class="section-tag">Studio Favorites</span>
+        <h2 class="section-title" id="bestsellers-heading">Loved by everyone ♡</h2>
+        <p class="section-desc">Our most cherished handmade pieces, made slowly and loved forever.</p>
+      </div>
+
+      <div class="product-grid" id="products-grid">
+        <!-- Rendered via store.js:
+             1. Crochet Tulip Bouquet ($42.00)
+             2. Mini Crochet Bear ($38.00)
+             3. Crochet Sunflower ($36.00)
+             4. Flower Keychain ($18.00)
+             5. Crochet Daisy Bag ($76.00)
+             6. Mini Mushroom Plushie ($28.00)
+        -->
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-2xl);">
+        <a href="#shop" class="btn btn-secondary btn-lg" onclick="renderProducts('All')">
+          View All Creations (18) →
+        </a>
+      </div>
+    </section>
+
+
+
+    <!-- 5. CUSTOM CROCHET -->
+    <section class="custom-crochet-section" id="section-custom" aria-labelledby="custom-title">
+      <div class="container">
+        <div class="custom-crochet-card">
+          <div class="custom-crochet-grid">
+            <div>
+              <span class="section-tag">Bespoke Orders</span>
+              <h2 class="heading-1" id="custom-title" style="margin-top: 6px; margin-bottom: 12px;">Imagine it. We'll crochet it.</h2>
+              <p class="body-lead" style="margin-bottom: 18px;">
+                Have an idea for something special? Tell us what you're dreaming of and let's turn it into something handmade.
+              </p>
+              <p style="color: var(--color-dark-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed); margin-bottom: 24px;">
+                Whether you need a custom bridal bouquet, a personalized plushie wearing your favorite colors, or a keepsake gift with custom wooden tag engraving — we work with you one-on-one.
+              </p>
+              <a href="#custom-crochet" class="btn btn-primary btn-lg">
+                Request a Custom Piece
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </a>
+            </div>
+
+            <div>
+              <div class="custom-samples-row">
+                <div class="custom-sample-thumb">
+                  <img src="assets/images/tulips.jpg" alt="Custom tulip bouquet palette">
+                  <span class="custom-sample-label">Custom Palette</span>
+                </div>
+                <div class="custom-sample-thumb">
+                  <img src="assets/images/bear.jpg" alt="Custom plushie outfit">
+                  <span class="custom-sample-label">Mini Plushies</span>
+                </div>
+                <div class="custom-sample-thumb">
+                  <img src="assets/images/giftbox.jpg" alt="Personalized wooden tag and gift note">
+                  <span class="custom-sample-label">Wooden Heart Tag</span>
+                </div>
+              </div>
+              <div style="background: var(--bg-surface); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 14px 18px; margin-top: 14px; display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 1.4rem;">🧶</span>
+                <span style="font-size: var(--text-xs); color: var(--color-dark-muted);">
+                  Choose from <strong>40+ milk cotton yarn shades</strong>, custom ribbon textures, and personalized engraved keepsake tags.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GIFTING -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);" aria-labelledby="gifting-title">
+      <div class="section-header">
+        <span class="section-tag">Handcrafted Moments</span>
+        <h2 class="section-title" id="gifting-title">Something special for someone special.</h2>
+        <p class="section-desc">Thoughtfully designed gifts that express warmth and stay cherished for years.</p>
+      </div>
+
+      <div class="gifting-grid">
+        <!-- 1. For Her -->
+        <a href="#shop" class="gifting-card" onclick="renderProducts('Flowers')">
+          <span class="gifting-card-icon">💐</span>
+          <h3 class="gifting-card-title">For Her</h3>
+          <span class="gifting-card-sub">Everlasting romantic roses & pastel bouquets</span>
+        </a>
+
+        <!-- 2. Birthday -->
+        <a href="#shop" class="gifting-card" onclick="renderProducts('Amigurumi')">
+          <span class="gifting-card-icon">🎂</span>
+          <h3 class="gifting-card-title">Birthday</h3>
+          <span class="gifting-card-sub">Sweet companions and cheerful sunflower stems</span>
+        </a>
+
+        <!-- 3. Anniversary -->
+        <a href="#shop" class="gifting-card" onclick="renderProducts('Gift Sets')">
+          <span class="gifting-card-icon">💌</span>
+          <h3 class="gifting-card-title">Anniversary</h3>
+          <span class="gifting-card-sub">Never-fading blooms tied with linen ribbon</span>
+        </a>
+
+        <!-- 4. Best Friend -->
+        <a href="#shop" class="gifting-card" onclick="renderProducts('Accessories')">
+          <span class="gifting-card-icon">✨</span>
+          <h3 class="gifting-card-title">Best Friend</h3>
+          <span class="gifting-card-sub">Charming flower keychains & daisy totes</span>
+        </a>
+
+        <!-- 5. Just Because -->
+        <a href="#shop" class="gifting-card" onclick="renderProducts('Flowers')">
+          <span class="gifting-card-icon">☕</span>
+          <h3 class="gifting-card-title">Just Because</h3>
+          <span class="gifting-card-sub">A cozy reminder that they are loved</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 7. CUSTOMER REVIEWS -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);" aria-labelledby="reviews-title">
+      <div class="section-header">
+        <span class="section-tag">Love Notes</span>
+        <h2 class="section-title" id="reviews-title">Loved by our customers</h2>
+        <p class="section-desc">Real words from people who welcomed BabyGurl Crochet into their homes.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “The tulip bouquet took my breath away. You can see every single stitch, and the linen wrapping makes it feel like an heirloom from a vintage European market.”
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">C</div>
+            <div>
+              <div class="review-author-name">Chloe Miller</div>
+              <div class="review-item-tag">Crochet Tulip Bouquet • Verified Love Note</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “I ordered the mini bear for my sister’s nursery. The little wooden buttons and honey yarn are so cozy and soft. Truly handmade with immense care.”
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">E</div>
+            <div>
+              <div class="review-author-name">Emma Watson</div>
+              <div class="review-item-tag">Mini Crochet Bear • Verified Love Note</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “My daisy bag gets compliments everywhere I go. It’s sturdy, holds all my essentials, and knowing an independent maker made it makes me so happy!”
+          </p>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div>
+              <div class="review-author-name">Sophia Rivera</div>
+              <div class="review-item-tag">Crochet Daisy Bag • Verified Love Note</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CUSTOMER PHOTO GALLERY -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);" aria-labelledby="gallery-title">
+      <div class="section-header">
+        <span class="section-tag">Our Community</span>
+        <h2 class="section-title" id="gallery-title">Made with love. Shared with love.</h2>
+        <p class="section-desc">
+          Tag <a href="https://instagram.com" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: var(--weight-semibold);">@babygurlcrochet</a> on Instagram to be featured in our cozy studio feed.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-tile">
+          <img src="assets/images/tulips.jpg" alt="Customer cozy desk with crochet tulips" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+        <div class="gallery-tile">
+          <img src="assets/images/sunflower.jpg" alt="Customer window with crochet sunflower" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+        <div class="gallery-tile">
+          <img src="assets/images/bear.jpg" alt="Customer bed with mini crochet bear" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+        <div class="gallery-tile">
+          <img src="assets/images/tote.jpg" alt="Customer carrying crochet daisy bag" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+        <div class="gallery-tile">
+          <img src="assets/images/mushroom.jpg" alt="Customer bookshelf with mushroom plushie" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+        <div class="gallery-tile">
+          <img src="assets/images/keychain.jpg" alt="Customer keys with flower keychain" loading="lazy">
+          <div class="gallery-tile-overlay">@babygurlcrochet ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. HOW IT WORKS -->
+    <section class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);" aria-labelledby="steps-title">
+      <div class="section-header">
+        <span class="section-tag">The Studio Process</span>
+        <h2 class="section-title" id="steps-title">How It Works</h2>
+        <p class="section-desc">From our studio hooks right to your cozy home.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <h3 class="step-title">Choose your favorite piece.</h3>
+          <p class="step-desc">Browse our everlasting blooms, cozy plushies, or request a custom colorway.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <h3 class="step-title">Place your order.</h3>
+          <p class="step-desc">Add a complimentary handwritten gift tag note and pick your preferred ribbon.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <h3 class="step-title">We carefully make and pack it.</h3>
+          <p class="step-desc">Handcrafted stitch-by-stitch, swaddled in botanical paper, and tied with raw linen.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">04</span>
+          <h3 class="step-title">It arrives at your door.</h3>
+          <p class="step-desc">Delivered safely ready to bring everlasting warmth or make someone smile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. NEWSLETTER -->
+    <section class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);" aria-labelledby="newsletter-title">
+      <div class="newsletter-card">
+        <span class="section-tag">Studio Letters</span>
+        <h2 class="heading-2" id="newsletter-title" style="margin-top: 6px; margin-bottom: 8px;">Stay in the loop ♡</h2>
+        <p class="body-lead" style="font-size: var(--text-base); max-width: 480px; margin: 0 auto;">
+          Be the first to know about new creations, special drops, and little surprises.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Welcome to the BabyGurl Crochet circle ♡'); this.reset();">
+          <input type="email" class="form-input" placeholder="Your email address" required aria-label="Your email address">
+          <button type="submit" class="btn btn-primary btn-md">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ADDITIONAL STORE VIEWS (FOR FULL CLIENT-SIDE NAVIGATION)
+         ========================================================================= -->
+    <!-- Shop / Catalog View -->
+    <div class="view-container" id="view-shop" style="display: none;">
+      <section class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Full Catalog</span>
+          <h1 class="section-title">All Handmade Creations</h1>
+          <p class="section-desc">Handcrafted with care, intention, and premium combed cotton.</p>
+        </div>
+        <div class="product-grid" id="shop-products-grid"></div>
+      </section>
+    </div>
+
+    <!-- Collections View -->
+    <div class="view-container" id="view-collections" style="display: none;">
+      <section class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Curated Series</span>
+          <h1 class="section-title">Seasonal Collections</h1>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <div style="background: var(--bg-surface); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-card);">
+            <img src="assets/images/bouquet.jpg" alt="Botanical Romance Series" style="width: 100%; height: 260px; object-fit: cover;">
+            <div style="padding: 24px;">
+              <span class="badge badge-rose">Spring / Summer</span>
+              <h3 class="heading-2" style="margin-top: 8px;">Botanical Romance</h3>
+              <p class="text-muted" style="margin: 8px 0 16px;">Everlasting tea roses, daisies, and lavender sprigs.</p>
+              <button class="btn btn-secondary btn-sm" onclick="navigateTo('shop'); renderProducts('Flowers');">Explore 7 Blooms →</button>
+            </div>
+          </div>
+          <div style="background: var(--bg-surface); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-card);">
+            <img src="assets/images/bear.jpg" alt="Heirloom Nursery Series" style="width: 100%; height: 260px; object-fit: cover;">
+            <div style="padding: 24px;">
+              <span class="badge badge-gold">Heirloom Plush</span>
+              <h3 class="heading-2" style="margin-top: 8px;">Heirloom Friends</h3>
+              <p class="text-muted" style="margin: 8px 0 16px;">Organic amigurumi companions with wooden buttons.</p>
+              <button class="btn btn-secondary btn-sm" onclick="navigateTo('shop'); renderProducts('Amigurumi');">Explore Plushies →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Custom Crochet View -->
+    <div class="view-container" id="view-custom-crochet" style="display: none;">
+      <section class="container container-narrow" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Custom Piece Request</span>
+          <h1 class="section-title">Imagine it. We'll crochet it.</h1>
+          <p class="section-desc">Tell us what you're dreaming of and let's turn it into something handmade.</p>
+        </div>
+        <div class="custom-order-panel">
+          <form onsubmit="handleCustomOrderSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">What would you like us to crochet?</label>
+              <select name="custom_type" class="form-select" required>
+                <option value="custom_bouquet">Custom Floral Bouquet (Everlasting)</option>
+                <option value="bridal_stems">Bridal & Wedding Keepsake Stems</option>
+                <option value="custom_plushie">Personalized Plushie Companion</option>
+                <option value="custom_bag">Bespoke Colorway Daisy Bag</option>
+                <option value="other">Other One-of-a-Kind Vision</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Color Palette Preference</label>
+              <div class="swatch-group">
+                <label class="swatch-item" title="Dusty Rose & Cream">
+                  <input type="radio" name="color_palette" value="dusty_rose" checked>
+                  <span class="swatch-circle" style="background: #D96C8A;"></span>
+                </label>
+                <label class="swatch-item" title="Blush & Vanilla">
+                  <input type="radio" name="color_palette" value="blush">
+                  <span class="swatch-circle" style="background: #F3C6D3;"></span>
+                </label>
+                <label class="swatch-item" title="Honey Gold & Oatmeal">
+                  <input type="radio" name="color_palette" value="gold">
+                  <span class="swatch-circle" style="background: #D9A441;"></span>
+                </label>
+                <label class="swatch-item" title="Eucalyptus Sage">
+                  <input type="radio" name="color_palette" value="sage">
+                  <span class="swatch-circle" style="background: #7B8F77;"></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Describe your idea or inspiration</label>
+              <textarea name="custom_details" class="form-textarea" placeholder="Include flower varieties, sizes, or special personal touches..." required></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" name="customer_name" class="form-input" placeholder="Maya Jensen" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Email</label>
+                <input type="email" name="customer_email" class="form-input" placeholder="maya@example.com" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 12px;">
+              Submit Custom Request 🌸
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+
+
+    <!-- Contact View -->
+    <div class="view-container" id="view-contact" style="display: none;">
+      <section class="container container-narrow" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h1 class="section-title">Get in Touch</h1>
+          <p class="section-desc">Have a question about a product, shipping, or custom piece? Send a note.</p>
+        </div>
+        <div class="custom-order-panel">
+          <form onsubmit="event.preventDefault(); showToast('Thank you! Your note has been delivered to our studio ♡'); this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              Send Note to Studio
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Wishlist View -->
+    <div class="view-container" id="view-wishlist" style="display: none;">
+      <section class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Saved Items</span>
+          <h1 class="section-title">Your Studio Wishlist</h1>
+        </div>
+        <div class="product-grid" id="wishlist-products-grid"></div>
+      </section>
+    </div>
+
+    <!-- Customer Account View -->
+    <div class="view-container" id="view-account" style="display: none;">
+      <section class="container container-narrow" style="padding-top: var(--space-xl); padding-bottom: var(--space-3xl);">
+        <div class="section-header">
+          <span class="section-tag">Customer Club</span>
+          <h1 class="section-title">My Studio Account</h1>
+        </div>
+        <div class="custom-order-panel">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-full); background: var(--color-primary-light); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold;">
+              M
+            </div>
+            <div>
+              <h3 class="heading-3">Maya Jensen</h3>
+              <span class="text-subtle">Member • 120 Yarn Hearts</span>
+            </div>
+          </div>
+          <div style="border-top: 1px solid var(--border-card); padding-top: 16px;">
+            <h4 class="heading-4" style="margin-bottom: 8px;">Order History</h4>
+            <div style="background: var(--bg-surface-warm); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong>Order #BGC-84920</strong>
+                <div class="text-subtle">Crochet Tulip Bouquet • $42.00</div>
+              </div>
+              <span class="badge badge-rose">Handcrafted & Shipped</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Product Details Single View -->
+    <div class="view-container" id="view-product" style="display: none;"></div>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="#home" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 4px;">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Instagram" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <!-- Pinterest -->
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Pinterest" title="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="21"/><path d="M8 12a4 4 0 1 1 8 0c0 2.2-1.3 4-3 4s-1.5-.7-2-1.5L10 18"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="btn-icon" aria-label="TikTok" title="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop</a>
+        <a href="collections.html" class="footer-link">Collections</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#shipping" class="footer-link" onclick="showToast('Orders ship carefully in 3–5 business days 📦'); return false;">Shipping</a>
+        <a href="#returns" class="footer-link" onclick="showToast('30-day gentle studio returns & exchanges ♡'); return false;">Returns</a>
+        <a href="#privacy" class="footer-link" onclick="showToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+        <a href="#terms" class="footer-link" onclick="showToast('BabyGurl Crochet studio terms of service'); return false;">Terms</a>
+        <a href="design-system.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Design System Spec ↗</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Amex</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🅿 PayPal</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 Shop Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Made slowly. Loved forever.</div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       NATIVE DIALOGS & OVERLAYS (<dialog>)
+       ========================================================================= -->
+
+  <!-- Cart Offcanvas Slide Drawer -->
+  <dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-cart-title">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🌸</span>
+        <h3 class="heading-3" id="drawer-cart-title" style="margin: 0;">Your Basket</h3>
+      </div>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeCartDrawer()" aria-label="Close basket">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Free Shipping Perk Meter -->
+      <div class="perk-meter">
+        <div class="perk-meter-text" id="shipping-meter-text">
+          <span>Add $8.00 for Free Studio Gift Wrap</span>
+          <span>84%</span>
+        </div>
+        <div class="perk-meter-bar">
+          <div class="perk-meter-progress" id="shipping-meter-bar" style="width: 84%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-list" id="cart-items-container">
+        <!-- Rendered by store.js -->
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <span class="text-muted">Subtotal:</span>
+        <span style="font-family: var(--font-editorial); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-dark);" id="cart-subtotal-val">$42.00</span>
+      </div>
+      <p class="text-subtle" style="margin-bottom: 14px; text-align: center;">Taxes & shipping calculated at checkout</p>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="closeCartDrawer(); showToast('Directing to secure studio checkout... 🌸');">
+          Checkout Now
+        </button>
+        <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="closeCartDrawer();">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Search Modal -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" id="site-search-input" class="form-input" placeholder="Search tulips, bears, sunflowers, bags..." oninput="handleLiveSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto; margin-top: 12px;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "mushroom", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- Quick View Product Modal -->
+  <dialog class="modal-card" id="quickview-modal" aria-label="Quick product preview">
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('quickview-modal').close()" aria-label="Close preview">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div id="quickview-body">
+      <!-- Injected by store.js -->
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Store Logic -->
+  <script src="js/store.js"></script>
+  <script>
+    // Search Modal handler
+    function openSearchModal() {
+      const modal = document.getElementById('search-modal');
+      if (modal) {
+        modal.showModal();
+        setTimeout(() => document.getElementById('site-search-input')?.focus(), 50);
+      }
+    }
+
+    function handleLiveSearch(query) {
+      const resBox = document.getElementById('search-results-box');
+      if (!resBox) return;
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        resBox.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "mushroom", "keychain"</span>';
+        return;
+      }
+      const matches = PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+      if (matches.length === 0) {
+        resBox.innerHTML = '<span class="text-subtle">No pieces found matching that term.</span>';
+        return;
+      }
+      resBox.innerHTML = matches.map(p => `
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: var(--bg-surface-warm); border-radius: var(--radius-md); border: 1px solid var(--border-card);">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${p.image}" alt="${p.title}" style="width: 40px; height: 40px; border-radius: var(--radius-sm); object-fit: cover;">
+            <div>
+              <strong style="font-size: var(--text-sm);">${p.title}</strong>
+              <div class="text-subtle">$${p.price.toFixed(2)} • ${p.category}</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="document.getElementById('search-modal').close(); quickAddToCart('${p.id}');">
+            + Add
+          </button>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

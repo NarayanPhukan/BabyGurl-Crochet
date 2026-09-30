@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Little Basket ♡ | BabyGurl Crochet</title>
+  <meta name="description" content="Review your handmade crochet items, choose gift wrap, apply coupons, and proceed to secure checkout.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Cart Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="document.getElementById('search-modal').showModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="index.html#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Indicator (Active Page) -->
+        <a href="cart.html" class="btn-icon cart-btn-indicator" id="btn-header-cart" aria-label="View Shopping Basket" title="Cart" style="border-color: var(--color-primary);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count">1</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-main-section" id="cart-main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="pdp-breadcrumb" aria-label="Breadcrumb" style="padding-top: 0;">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="shop.html">Shop</a>
+        <span>/</span>
+        <span style="color: var(--color-dark); font-weight: var(--weight-medium);">Your little basket</span>
+      </nav>
+
+      <!-- Cart Header -->
+      <div class="cart-header-block">
+        <h1 class="cart-page-title">Your little basket ♡</h1>
+        <p class="cart-page-sub">Almost yours. Each piece is prepared slowly and packed with love.</p>
+      </div>
+
+      <!-- Two-Column Cart Layout -->
+      <div class="cart-layout-grid" id="cart-layout-grid">
+
+        <!-- LEFT SIDE: Items & Gifting -->
+        <div>
+          <!-- Free Studio Gift Wrap Perk Meter -->
+          <div class="cart-perk-box">
+            <div class="cart-perk-header">
+              <span id="cart-perk-text">Add <strong>₹201</strong> more for Free Studio Gift Wrap</span>
+              <span style="font-weight: var(--weight-semibold); color: var(--color-primary);">80%</span>
+            </div>
+            <div class="cart-perk-track">
+              <div class="cart-perk-fill" id="cart-perk-fill" style="width: 80%;"></div>
+            </div>
+          </div>
+
+          <!-- Items List Container -->
+          <div class="cart-items-wrapper" id="cart-items-list">
+            <!-- Dynamically populated by js/cart.js -->
+          </div>
+
+          <!-- Sending as a Gift? 🎁 -->
+          <div class="cart-gift-box">
+            <label class="gift-toggle-row" for="gift-opt-toggle">
+              <div class="gift-toggle-left">
+                <span class="gift-toggle-icon">🎁</span>
+                <div>
+                  <div class="gift-toggle-title">Sending this as a gift?</div>
+                  <div class="gift-toggle-sub">Add a personalized handwritten calligraphy note & premium linen ribbon wrap.</div>
+                </div>
+              </div>
+              <input type="checkbox" id="gift-opt-toggle" style="accent-color: var(--color-primary); width: 20px; height: 20px; cursor: pointer;">
+            </label>
+
+            <!-- Expanded Gift Message Area -->
+            <div class="gift-details-expand" id="gift-details-expand">
+              <div class="form-group" style="margin-bottom: 12px;">
+                <label class="form-label" for="gift-message-input" style="font-size: var(--text-xs);">Handwritten note for wooden tag / card</label>
+                <textarea id="gift-message-input" class="form-textarea" style="min-height: 80px; font-size: var(--text-sm);" placeholder="Write something sweet… (e.g. Happy 21st, Maya! Loved you then, love you now ♡)"></textarea>
+              </div>
+              <label style="display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--color-dark-muted); cursor: pointer;">
+                <input type="checkbox" id="gift-hide-price-check" checked style="accent-color: var(--color-primary); width: 16px; height: 16px;">
+                <span>Hide price from recipient (price receipt omitted from shipping parcel)</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: Sticky Order Summary -->
+        <aside class="cart-summary-sticky">
+          <div class="cart-summary-card">
+            <h2 class="cart-summary-title">Summary</h2>
+
+            <!-- Subtotal -->
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <strong id="summary-subtotal-val">₹799</strong>
+            </div>
+
+            <!-- Shipping Note -->
+            <div class="cart-summary-row">
+              <span>Shipping</span>
+              <span class="text-subtle" style="font-size: var(--text-xs);">Calculated at checkout</span>
+            </div>
+
+            <!-- Discount Row (Hidden if none) -->
+            <div class="cart-summary-row is-discount" id="summary-discount-row" style="display: none;">
+              <span>Handmade Discount</span>
+              <span id="summary-discount-val">-₹0</span>
+            </div>
+
+            <!-- Total -->
+            <div class="cart-summary-row is-total">
+              <span>Total</span>
+              <span id="summary-total-val">₹799</span>
+            </div>
+
+            <!-- Coupon Accordion (Subtle) -->
+            <details class="cart-coupon-accordion" id="coupon-accordion">
+              <summary>
+                <span>🏷️</span>
+                <span>Have a discount code?</span>
+              </summary>
+              <div class="coupon-input-group">
+                <input type="text" id="coupon-input-field" class="coupon-input" placeholder="Enter code (e.g. SWEET10)">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-apply-coupon" style="padding: 6px 14px;">
+                  Apply
+                </button>
+              </div>
+              <div id="coupon-status-msg" style="display: none; font-size: 0.72rem; color: var(--color-success); margin-top: 6px;"></div>
+            </details>
+
+            <!-- Actions -->
+            <div class="cart-summary-actions">
+              <a href="checkout.html" class="btn btn-primary btn-lg" style="text-align: center; width: 100%;">
+                Proceed to Checkout →
+              </a>
+              <a href="shop.html" class="btn btn-secondary btn-sm" style="text-align: center; width: 100%;">
+                Continue Shopping
+              </a>
+            </div>
+
+            <!-- Subtle Trust Badges -->
+            <div class="cart-trust-badges">
+              <span>🔒 256-bit Secure</span>
+              <span>•</span>
+              <span>🇮🇳 Shipping across India</span>
+              <span>•</span>
+              <span>📦 Slow Craft</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- =====================================================================
+           EMPTY BASKET STATE
+           ===================================================================== -->
+      <div class="cart-empty-state" id="cart-empty-state">
+        <div class="empty-state-icon">🧺</div>
+        <h2 class="empty-state-heading">Your basket is feeling lonely ♡</h2>
+        <p class="empty-state-lead">
+          Let's find something handmade for it. From everlasting flowers to pocket plushies, we have something sweet waiting for you.
+        </p>
+        <div class="empty-state-actions">
+          <a href="shop.html" class="btn btn-primary btn-md">
+            Shop Crochet
+          </a>
+          <a href="collections.html" class="btn btn-secondary btn-md">
+            Explore Gifts
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           YOU MAY ALSO LIKE (4 Recommended Products)
+           ===================================================================== -->
+      <section class="cart-recommendations-section" aria-labelledby="rec-heading">
+        <div class="section-header">
+          <span class="section-tag">Made For Gifting</span>
+          <h2 class="section-title" id="rec-heading">You might also love</h2>
+          <p class="section-desc">More slow-crafted favorites created with the same soft cotton yarn.</p>
+        </div>
+
+        <div class="cart-rec-grid">
+          <!-- 1. Daisy Bouquet -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Bestseller</span>
+              <img class="product-card-img" src="assets/images/bouquet.jpg" alt="Crochet Daisy Bouquet" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Bouquets</div>
+              <h3 class="product-card-title"><a href="product-details.html">Crochet Daisy Bouquet</a></h3>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹699</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="addCrossSellToBasket({ id: 'crochet-daisy-bouquet', title: 'Crochet Daisy Bouquet', price: 699, variant: 'Cream & Blush', image: 'assets/images/bouquet.jpg' })">
+                  Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Mini Bear -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Pocket Hug</span>
+              <img class="product-card-img" src="assets/images/bear.jpg" alt="Mini Crochet Bear" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Amigurumi</div>
+              <h3 class="product-card-title"><a href="shop.html">Mini Crochet Bear</a></h3>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹499</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="addCrossSellToBasket({ id: 'mini-crochet-bear', title: 'Mini Crochet Bear', price: 499, variant: 'Honey Caramel', image: 'assets/images/bear.jpg' })">
+                  Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Sunflower -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Sunny Desk</span>
+              <img class="product-card-img" src="assets/images/sunflower.jpg" alt="Crochet Sunflower" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Home Decor</div>
+              <h3 class="product-card-title"><a href="shop.html">Crochet Sunflower</a></h3>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹349</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="addCrossSellToBasket({ id: 'crochet-sunflower', title: 'Crochet Sunflower', price: 349, variant: 'Honey Gold', image: 'assets/images/sunflower.jpg' })">
+                  Add
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Keychain -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Everyday</span>
+              <img class="product-card-img" src="assets/images/keychain.jpg" alt="Flower Keychain" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-category">Accessories</div>
+              <h3 class="product-card-title"><a href="shop.html">Flower Keychain</a></h3>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹199</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="addCrossSellToBasket({ id: 'flower-keychain', title: 'Flower Keychain', price: 199, variant: 'Pastel Blossom', image: 'assets/images/keychain.jpg' })">
+                  Add
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Search Modal -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handleSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="collections.html" class="footer-link">Collections</a>
+        <a href="product-details.html" class="footer-link">Tulip Bouquet</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showCartToast('Carefully packed in eco-kraft paper & raw linen 📦'); return false;">Gifting & Packing</a>
+        <a href="#" class="footer-link" onclick="showCartToast('Safe insured courier across India 🇮🇳'); return false;">Shipping Info</a>
+        <a href="#" class="footer-link" onclick="showCartToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed secure 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 NetBanking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Almost yours.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Cart Interaction Engine -->
+  <script src="js/cart.js"></script>
+
+  <script>
+    function handleSearch(q) {
+      const box = document.getElementById('search-results-box');
+      if (!box) return;
+      if (!q.trim()) {
+        box.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>';
+        return;
+      }
+      box.innerHTML = `
+        <a href="shop.html" style="padding: 10px; background: var(--bg-surface-warm); border-radius: var(--radius-sm); font-size: var(--text-sm); display: block; color: var(--color-dark);">
+          Browse all results for "<strong>${q}</strong>" in Shop →
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

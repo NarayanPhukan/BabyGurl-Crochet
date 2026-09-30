@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | BabyGurl Crochet</title>
+  <meta name="description" content="Complete your handmade crochet order with secure UPI, Cards, NetBanking, and insured delivery across India.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Checkout Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body class="checkout-active">
+
+  <!-- =========================================================================
+       DISTRACTION-FREE HEADER (Logo + Back to Cart only)
+       ========================================================================= -->
+  <header class="checkout-header">
+    <div class="container checkout-header-inner">
+      <!-- Back to Cart Link -->
+      <a href="cart.html" class="back-to-cart-link">
+        <span>←</span>
+        <span>Back to Basket</span>
+      </a>
+
+      <!-- BabyGurl Crochet Wordmark -->
+      <a href="index.html" class="brand-wordmark" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- 256-bit Secure Checkout Badge -->
+      <div class="checkout-secure-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>256-bit Secure</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-main-wrap" id="checkout-main-content">
+    <div class="container">
+
+      <!-- =====================================================================
+           STEP PROGRESS INDICATOR (01 Information, 02 Delivery, 03 Payment, 04 Confirmation)
+           ===================================================================== -->
+      <nav class="checkout-steps-tracker" id="checkout-steps-tracker" aria-label="Checkout Progress">
+        <div class="step-indicator-item active" data-step="1">
+          <span class="step-indicator-num">01</span>
+          <span class="label">Information</span>
+        </div>
+        <span style="color: var(--color-dark-subtle); font-size: 0.8rem;">›</span>
+        <div class="step-indicator-item" data-step="2">
+          <span class="step-indicator-num">02</span>
+          <span class="label">Delivery</span>
+        </div>
+        <span style="color: var(--color-dark-subtle); font-size: 0.8rem;">›</span>
+        <div class="step-indicator-item" data-step="3">
+          <span class="step-indicator-num">03</span>
+          <span class="label">Payment</span>
+        </div>
+        <span style="color: var(--color-dark-subtle); font-size: 0.8rem;">›</span>
+        <div class="step-indicator-item" data-step="4">
+          <span class="step-indicator-num">04</span>
+          <span class="label">Confirmation</span>
+        </div>
+      </nav>
+
+      <!-- Two-Column Checkout Layout -->
+      <div class="checkout-grid">
+
+        <!-- LEFT COLUMN: Multi-Step Wizard Panels -->
+        <div>
+
+          <!-- =================================================================
+               STEP 1: CONTACT INFORMATION
+               ================================================================= -->
+          <div class="checkout-panel active" id="checkout-step-1">
+            <h2 class="checkout-panel-heading">Where can we reach you?</h2>
+            <p class="checkout-panel-sub">We'll send order tracking updates and receipt to this contact.</p>
+
+            <div class="form-field-group">
+              <label class="form-field-label" for="checkout-email">Email Address *</label>
+              <input type="email" id="checkout-email" class="form-field-input" placeholder="e.g. maya@example.com" value="maya.sharma@example.com" required>
+              <div class="field-error-msg">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-field-group">
+              <label class="form-field-label" for="checkout-phone">Phone Number (SMS & WhatsApp updates) *</label>
+              <input type="tel" id="checkout-phone" class="form-field-input" placeholder="e.g. 9876543210" value="9876543210" required>
+              <div class="field-error-msg">Please enter a valid 10-digit mobile number</div>
+            </div>
+
+            <div class="form-field-group" style="margin-top: 18px;">
+              <label style="display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--color-dark-muted); cursor: pointer;">
+                <input type="checkbox" id="checkout-save-account" checked style="accent-color: var(--color-primary); width: 16px; height: 16px;">
+                <span>Create an account for faster checkout next time</span>
+              </label>
+            </div>
+
+            <div class="checkout-step-footer">
+              <a href="cart.html" class="btn btn-secondary btn-sm">
+                ← Back to Basket
+              </a>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextCheckoutStep()">
+                Continue to Delivery →
+              </button>
+            </div>
+          </div>
+
+          <!-- =================================================================
+               STEP 2: DELIVERY ADDRESS & METHOD
+               ================================================================= -->
+          <div class="checkout-panel" id="checkout-step-2">
+            <h2 class="checkout-panel-heading">Where should we send your order?</h2>
+            <p class="checkout-panel-sub">Each handmade package is packed carefully in eco-kraft boxes across India.</p>
+
+            <div class="form-field-group">
+              <label class="form-field-label" for="checkout-name">Full Name *</label>
+              <input type="text" id="checkout-name" class="form-field-input" placeholder="e.g. Maya Sharma" value="Maya Sharma" required>
+              <div class="field-error-msg">Please enter your full name</div>
+            </div>
+
+            <div class="form-field-group">
+              <label class="form-field-label" for="checkout-address">Apartment / House / Street Address *</label>
+              <input type="text" id="checkout-address" class="form-field-input" placeholder="Flat 402, Bloom Residencies, Linking Road" value="Flat 402, Bloom Residencies, Linking Road" required>
+              <div class="field-error-msg">Please enter your street address</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-field-group">
+                <label class="form-field-label" for="checkout-city">City *</label>
+                <input type="text" id="checkout-city" class="form-field-input" placeholder="e.g. Mumbai" value="Mumbai" required>
+                <div class="field-error-msg">Please enter your city</div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-field-label" for="checkout-state">State *</label>
+                <select id="checkout-state" class="form-field-input">
+                  <option value="Maharashtra" selected>Maharashtra</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Other">Other States & UTs</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="form-field-group">
+                <label class="form-field-label" for="checkout-pincode">PIN Code (6 Digits) *</label>
+                <input type="text" id="checkout-pincode" class="form-field-input" placeholder="e.g. 400050" value="400050" maxlength="6" required>
+                <div class="field-error-msg">Please enter a valid 6-digit Indian PIN code</div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-field-label" for="checkout-country">Country</label>
+                <input type="text" id="checkout-country" class="form-field-input" value="India" disabled style="background: var(--bg-surface-warm); cursor: not-allowed;">
+              </div>
+            </div>
+
+            <!-- Delivery Method Selector (Differentiating Preparation & Shipping Time) -->
+            <div style="margin-top: var(--space-xl);">
+              <label class="form-field-label" style="font-size: var(--text-sm);">Choose Delivery Method</label>
+
+              <div class="delivery-options-grid">
+                <!-- Standard Delivery -->
+                <label class="delivery-method-card active" data-method="standard">
+                  <div class="delivery-method-info">
+                    <span class="delivery-method-name">Standard Delivery</span>
+                    <span class="delivery-method-timing">Estimated 4–7 business days</span>
+                    <span class="delivery-method-handmade-note">✨ Handmade preparation: 3–5 days • Courier shipping: 4–7 days</span>
+                  </div>
+                  <div class="delivery-method-price">₹49 (or FREE over ₹1,000)</div>
+                </label>
+
+                <!-- Express Delivery -->
+                <label class="delivery-method-card" data-method="express">
+                  <div class="delivery-method-info">
+                    <span class="delivery-method-name">Express Studio Delivery</span>
+                    <span class="delivery-method-timing">Estimated 2–4 business days</span>
+                    <span class="delivery-method-handmade-note">⚡ Priority craft queue (2–3 days) • Insured air shipping</span>
+                  </div>
+                  <div class="delivery-method-price">₹149</div>
+                </label>
+              </div>
+            </div>
+
+            <div class="checkout-step-footer">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="prevCheckoutStep()">
+                ← Back to Contact
+              </button>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextCheckoutStep()">
+                Continue to Payment →
+              </button>
+            </div>
+          </div>
+
+          <!-- =================================================================
+               STEP 3: PAYMENT
+               ================================================================= -->
+          <div class="checkout-panel" id="checkout-step-3">
+            <h2 class="checkout-panel-heading">Choose how you'd like to pay</h2>
+            <p class="checkout-panel-sub">All transactions are encrypted with 256-bit bank-grade security.</p>
+
+            <!-- Payment Tabs -->
+            <div class="payment-methods-tabs" role="tablist">
+              <button type="button" class="payment-tab-btn active" data-pay="upi">
+                <span>📱</span>
+                <span>UPI (Instant)</span>
+              </button>
+              <button type="button" class="payment-tab-btn" data-pay="card">
+                <span>💳</span>
+                <span>Cards</span>
+              </button>
+              <button type="button" class="payment-tab-btn" data-pay="netbanking">
+                <span>🏦</span>
+                <span>Net Banking</span>
+              </button>
+              <button type="button" class="payment-tab-btn" data-pay="wallets">
+                <span>👛</span>
+                <span>Wallets</span>
+              </button>
+              <button type="button" class="payment-tab-btn" data-pay="cod">
+                <span>💵</span>
+                <span>Cash on Delivery</span>
+              </button>
+            </div>
+
+            <!-- SUBPANEL 1: UPI -->
+            <div class="payment-subpanel active" id="pay-subpanel-upi">
+              <label class="form-field-label">Quick UPI App</label>
+              <div class="upi-apps-row">
+                <button type="button" class="upi-app-chip" data-app="GPay">Google Pay</button>
+                <button type="button" class="upi-app-chip" data-app="PhonePe">PhonePe</button>
+                <button type="button" class="upi-app-chip" data-app="Paytm">Paytm</button>
+                <button type="button" class="upi-app-chip" data-app="BHIM">BHIM UPI</button>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-field-label" for="checkout-upi-id">Or Enter UPI ID</label>
+                <div style="display: flex; gap: 8px;">
+                  <input type="text" id="checkout-upi-id" class="form-field-input" placeholder="e.g. mobile@okaxis / username@upi" value="maya@okaxis">
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="showCheckoutToast('UPI ID Verified ✓')" style="white-space: nowrap;">
+                    Verify
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SUBPANEL 2: CARDS -->
+            <div class="payment-subpanel" id="pay-subpanel-card">
+              <div class="form-field-group">
+                <label class="form-field-label">Card Number</label>
+                <input type="text" class="form-field-input" placeholder="4111 2222 3333 4444" maxlength="19">
+              </div>
+              <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px;">
+                <div class="form-field-group">
+                  <label class="form-field-label">Name on Card</label>
+                  <input type="text" class="form-field-input" placeholder="Maya Sharma">
+                </div>
+                <div class="form-field-group">
+                  <label class="form-field-label">Expiry</label>
+                  <input type="text" class="form-field-input" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-field-group">
+                  <label class="form-field-label">CVV</label>
+                  <input type="password" class="form-field-input" placeholder="•••" maxlength="4">
+                </div>
+              </div>
+            </div>
+
+            <!-- SUBPANEL 3: NETBANKING -->
+            <div class="payment-subpanel" id="pay-subpanel-netbanking">
+              <label class="form-field-label">Select Your Bank</label>
+              <select class="form-field-input">
+                <option>HDFC Bank</option>
+                <option>ICICI Bank</option>
+                <option>State Bank of India (SBI)</option>
+                <option>Axis Bank</option>
+                <option>Kotak Mahindra Bank</option>
+              </select>
+            </div>
+
+            <!-- SUBPANEL 4: WALLETS -->
+            <div class="payment-subpanel" id="pay-subpanel-wallets">
+              <label class="form-field-label">Select Wallet</label>
+              <select class="form-field-input">
+                <option>Paytm Wallet</option>
+                <option>PhonePe Wallet</option>
+                <option>Mobikwik</option>
+                <option>Amazon Pay</option>
+              </select>
+            </div>
+
+            <!-- SUBPANEL 5: COD -->
+            <div class="payment-subpanel" id="pay-subpanel-cod">
+              <p style="font-size: var(--text-xs); color: var(--color-dark-muted); line-height: var(--leading-relaxed); margin: 0;">
+                Pay with cash upon delivery. An OTP verification SMS will be sent prior to courier dispatch. (₹50 slow-craft verification fee applies for COD).
+              </p>
+            </div>
+
+            <!-- Trust Reassurance -->
+            <div style="display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--color-dark-muted); margin: 16px 0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--color-success)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Your payment information is securely processed. We never store full card or UPI PIN details.</span>
+            </div>
+
+            <!-- Error State Demo Button (Edge State Simulation) -->
+            <div style="text-align: right; margin-bottom: 12px;">
+              <button type="button" style="background: none; border: none; color: var(--color-dark-subtle); font-size: 0.72rem; text-decoration: underline; cursor: pointer;" onclick="simulatePaymentError()">
+                [Demo Simulator: Test Payment Error Edge State]
+              </button>
+            </div>
+
+            <!-- Final CTA Button -->
+            <button type="button" class="btn btn-primary btn-lg" id="btn-place-order" onclick="placeOrder()" style="width: 100%; padding: 16px;">
+              Place Order ♡
+            </button>
+            <p class="text-subtle" style="font-size: 0.72rem; text-align: center; margin-top: 8px;">
+              By placing your order, you agree to our Terms and Policies.
+            </p>
+
+            <div class="checkout-step-footer">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="prevCheckoutStep()">
+                ← Back to Delivery
+              </button>
+              <span class="text-subtle">Almost yours!</span>
+            </div>
+          </div>
+
+          <!-- =================================================================
+               STEP 4: ORDER CONFIRMATION & ORDER TRACKING
+               ================================================================= -->
+          <div class="checkout-panel" id="checkout-step-4">
+            <div class="confirmation-card">
+              <div class="confirmation-heart-icon">♡</div>
+              <h1 class="confirmation-title">Your order is on its way to becoming something special ♡</h1>
+              <p class="confirmation-sub">Thank you for supporting handmade craftsmanship. A maker is already smiling!</p>
+
+              <!-- Order Summary Badges Box -->
+              <div class="confirmation-details-box">
+                <div class="conf-detail-row">
+                  <span class="text-muted">Order Number:</span>
+                  <strong style="color: var(--color-primary); font-family: var(--font-editorial);" id="conf-order-number">#BGC-84920</strong>
+                </div>
+                <div class="conf-detail-row">
+                  <span class="text-muted">Estimated Preparation:</span>
+                  <strong id="conf-prep-date">Oct 4, 2026</strong>
+                </div>
+                <div class="conf-detail-row">
+                  <span class="text-muted">Estimated Delivery:</span>
+                  <strong style="color: var(--color-success);" id="conf-deliv-date">Oct 8, 2026</strong>
+                </div>
+                <div class="conf-detail-row">
+                  <span class="text-muted">Delivery Address:</span>
+                  <span id="conf-address-summary" style="max-width: 280px; text-align: right; color: var(--color-dark);">Flat 402, Mumbai, MH</span>
+                </div>
+              </div>
+
+              <!-- Slow-Craft Handmade Timeline (Emphasizing Being Handmade) -->
+              <div style="text-align: left; margin: var(--space-xl) 0 8px;">
+                <span class="badge badge-linen">Slow-Craft Journey</span>
+                <h3 class="heading-4" style="margin: 6px 0 0;">Handmade Production & Shipping Timeline</h3>
+              </div>
+
+              <div class="craft-tracking-timeline">
+                <!-- 1 -->
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Order Placed</div>
+                </div>
+                <!-- 2 -->
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Payment Confirmed</div>
+                </div>
+                <!-- 3: Highlighted Being Handmade -->
+                <div class="timeline-node active">
+                  <div class="timeline-dot">🧶</div>
+                  <div class="timeline-label">Being Handmade</div>
+                </div>
+                <!-- 4 -->
+                <div class="timeline-node">
+                  <div class="timeline-dot">🎁</div>
+                  <div class="timeline-label">Ready to Ship</div>
+                </div>
+                <!-- 5 -->
+                <div class="timeline-node">
+                  <div class="timeline-dot">🚚</div>
+                  <div class="timeline-label">Shipped</div>
+                </div>
+                <!-- 6 -->
+                <div class="timeline-node">
+                  <div class="timeline-dot">📦</div>
+                  <div class="timeline-label">Out for Delivery</div>
+                </div>
+                <!-- 7 -->
+                <div class="timeline-node">
+                  <div class="timeline-dot">🌸</div>
+                  <div class="timeline-label">Delivered ♡</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: var(--space-2xl);">
+                <a href="account.html" class="btn btn-primary btn-md">
+                  Track in My Account →
+                </a>
+                <a href="shop.html" class="btn btn-secondary btn-md">
+                  Continue Shopping
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Collapsible Order Summary Sidebar -->
+        <aside class="checkout-summary-box" id="checkout-summary-column">
+          <h2 class="checkout-summary-title">
+            <span>Order Summary</span>
+            <span style="font-size: var(--text-xs); color: var(--color-primary); font-family: var(--font-body); font-weight: var(--weight-medium);">Safe & Insured</span>
+          </h2>
+
+          <!-- Mini Items List -->
+          <div class="checkout-items-list" id="checkout-summary-items">
+            <!-- Dynamically populated by js/checkout.js -->
+          </div>
+
+          <!-- Price Calculations -->
+          <div style="border-top: 1px solid var(--border-card); padding-top: 14px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: var(--text-xs); color: var(--color-dark-muted);">
+              <span>Subtotal</span>
+              <strong id="summary-subtotal">₹799</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: var(--text-xs); color: var(--color-dark-muted);">
+              <span>Delivery</span>
+              <strong id="summary-shipping">₹49</strong>
+            </div>
+
+            <div id="summary-discount-row" style="display: none; justify-content: space-between; margin-bottom: 8px; font-size: var(--text-xs); color: var(--color-success); font-weight: var(--weight-medium);">
+              <span>Discount</span>
+              <strong id="summary-discount">-₹0</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-card); font-family: var(--font-editorial); font-size: var(--text-lg); color: var(--color-dark); font-weight: var(--weight-bold);">
+              <span>Total</span>
+              <span id="summary-grand-total">₹848</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       EDGE STATE: PAYMENT FAILED MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="error-state-modal" id="payment-error-modal" aria-labelledby="error-modal-title">
+    <div class="error-state-icon">✕</div>
+    <h3 class="heading-3" id="error-modal-title" style="margin-bottom: 8px; color: var(--color-error);">
+      Something went wrong with your payment.
+    </h3>
+    <p style="font-size: var(--text-xs); color: var(--color-dark-muted); line-height: var(--leading-relaxed); margin-bottom: 20px;">
+      Your order hasn't been placed. You can try again without losing your basket. Your items are safe in your cart.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <button type="button" class="btn btn-primary btn-md" onclick="closePaymentErrorModal(); showCheckoutToast('Retrying payment gateway connection... 🌸');">
+        Try Payment Again
+      </button>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="closePaymentErrorModal();">
+        Choose Another Method
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Mobile Sticky Bottom Bar -->
+  <div class="mobile-sticky-checkout-bar" id="mobile-sticky-checkout-bar">
+    <div>
+      <div style="font-size: 0.7rem; color: var(--color-dark-subtle);">Total Amount</div>
+      <strong id="mobile-sticky-total-val" style="font-size: var(--text-sm); color: var(--color-dark);">₹848</strong>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" onclick="placeOrder()">
+      Place Order ♡
+    </button>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Checkout Interaction Engine -->
+  <script src="js/checkout.js"></script>
+</body>
+</html>

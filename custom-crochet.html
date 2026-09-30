@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Crochet | Imagine It, We'll Crochet It | BabyGurl Crochet</title>
+  <meta name="description" content="Personalized handmade crochet creations made specifically for you. Request custom plushies, pet replicas, everlasting bouquets, bags, and keepsake gifts.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Custom Page Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <span>Bespoke orders crafted one stitch at a time across India</span>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link active" id="nav-custom" aria-current="page">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="document.getElementById('search-modal').showModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="index.html#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="btn-icon cart-btn-indicator" id="btn-header-cart" onclick="document.getElementById('cart-drawer').showModal()" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="custom-main-content">
+
+    <!-- =======================================================================
+         1. HERO SECTION
+         ======================================================================= -->
+    <section class="custom-hero-section" aria-labelledby="custom-hero-heading">
+      <div class="container custom-hero-grid">
+        <!-- Left: Copy & CTAs -->
+        <div>
+          <div class="custom-hero-badge">
+            <span>✨ Made Specifically For You</span>
+          </div>
+
+          <h1 class="custom-hero-title" id="custom-hero-heading">
+            Imagine it.<br>We'll crochet it.
+          </h1>
+
+          <p class="custom-hero-lead">
+            Have something special in mind? Tell us what you're imagining and we'll see how we can bring it to life, one stitch at a time.
+          </p>
+
+          <div class="custom-hero-actions">
+            <a href="#custom-form-wrapper" class="btn btn-primary btn-lg" onclick="goToStep(1)">
+              Start Your Custom Request
+            </a>
+            <a href="#previous-creations" class="btn btn-secondary btn-lg">
+              See Custom Creations
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Collage Showcase -->
+        <div class="custom-hero-media-wrap">
+          <div class="custom-hero-collage">
+            <!-- Main Hero Card: Custom Pet Replica -->
+            <div class="custom-hero-main-card">
+              <img src="assets/images/pet_plushie.jpg" alt="Artisanal handmade crochet puppy pet replica with custom engraved tag" loading="eager" fetchpriority="high">
+            </div>
+
+            <!-- Sub Hero Card: Floral arrangement -->
+            <div class="custom-hero-sub-card">
+              <img src="assets/images/bouquet.jpg" alt="Bespoke handmade crochet wildflower and daisy bouquet" loading="lazy">
+            </div>
+
+            <!-- Floating reassurance badge -->
+            <div class="custom-hero-floating-tag">
+              <span class="dot"></span>
+              <span>Handcrafted with Care • Tailored for You</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. WHAT CAN WE MAKE? (Visual Grid of 10 Possibilities)
+         ======================================================================= -->
+    <section class="what-can-make-section" aria-labelledby="what-can-make-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Endless Possibilities</span>
+          <h2 class="section-title" id="what-can-make-heading">What can we make?</h2>
+          <p class="section-desc">Tap any inspiration below to pre-select it in your request form.</p>
+        </div>
+
+        <div class="custom-cats-grid">
+          <!-- 1. Custom Plushies -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Plushie" title="Request a Custom Plushie">
+            <div class="custom-cat-media">
+              <img src="assets/images/bunny.jpg" alt="Custom Plushies" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Custom Plushies</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 2. Pet Replicas -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Plushie" title="Request a Pet Replica">
+            <div class="custom-cat-media">
+              <img src="assets/images/pet_plushie.jpg" alt="Pet Replicas" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Pet Replicas</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 3. Crochet Flowers -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Flower / Bouquet" title="Request Crochet Flowers">
+            <div class="custom-cat-media">
+              <img src="assets/images/tulips.jpg" alt="Crochet Flowers" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Crochet Flowers</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 4. Bouquets -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Flower / Bouquet" title="Request Custom Bouquets">
+            <div class="custom-cat-media">
+              <img src="assets/images/bouquet.jpg" alt="Bouquets" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Bouquets</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 5. Character-Inspired Pieces -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Plushie" title="Request Character-Inspired Pieces">
+            <div class="custom-cat-media">
+              <img src="assets/images/mushroom.jpg" alt="Character-Inspired Pieces" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Character-Inspired Pieces</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 6. Couple Gifts -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Gift" title="Request Couple Gifts">
+            <div class="custom-cat-media">
+              <img src="assets/images/bear.jpg" alt="Couple Gifts" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Couple Gifts</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 7. Keychains -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Keychain" title="Request Keychains">
+            <div class="custom-cat-media">
+              <img src="assets/images/heart_keychain.jpg" alt="Keychains" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Keychains</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 8. Bags -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Bag" title="Request Custom Bags">
+            <div class="custom-cat-media">
+              <img src="assets/images/tote.jpg" alt="Bags" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Bags</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 9. Home Decor -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Home Decor" title="Request Home Decor">
+            <div class="custom-cat-media">
+              <img src="assets/images/sunflower.jpg" alt="Home Decor" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Home Decor</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+
+          <!-- 10. Personalized Gifts -->
+          <a href="#custom-form-wrapper" class="custom-cat-card" data-category="Gift" title="Request Personalized Gifts">
+            <div class="custom-cat-media">
+              <img src="assets/images/giftbox.jpg" alt="Personalized Gifts" loading="lazy">
+            </div>
+            <div class="custom-cat-body">
+              <span class="custom-cat-name">Personalized Gifts</span>
+              <span class="custom-cat-hint">Tap to request →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. 4-STEP CUSTOM PROCESS
+         ======================================================================= -->
+    <section class="custom-process-section" aria-labelledby="custom-process-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">How It Works</span>
+          <h2 class="section-title" id="custom-process-heading">Our Simple 4-Step Process</h2>
+          <p class="section-desc">From your first message to unwrapping your keepsake, we keep you in the loop every step of the way.</p>
+        </div>
+
+        <div class="process-steps-grid">
+          <!-- Step 01 -->
+          <div class="process-step-card">
+            <div class="process-step-num">
+              <span>01</span>
+              <span class="icon">💬</span>
+            </div>
+            <h3 class="process-step-title">Tell Us Your Idea</h3>
+            <p class="process-step-desc">Share what you want us to make, your favorite colors, and any photos or inspiration you have.</p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="process-step-card">
+            <div class="process-step-num">
+              <span>02</span>
+              <span class="icon">🎨</span>
+            </div>
+            <h3 class="process-step-title">Discuss the Details</h3>
+            <p class="process-step-desc">We'll review your vision, recommend the best yarn texture and sizing, and answer any questions.</p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="process-step-card">
+            <div class="process-step-num">
+              <span>03</span>
+              <span class="icon">📝</span>
+            </div>
+            <h3 class="process-step-title">Confirm Your Order</h3>
+            <p class="process-step-desc">You'll receive the final design plan, estimated timeframe, and clear price before production begins.</p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="process-step-card">
+            <div class="process-step-num">
+              <span>04</span>
+              <span class="icon">✨</span>
+            </div>
+            <h3 class="process-step-title">Handmade For You</h3>
+            <p class="process-step-desc">Your custom piece is carefully crocheted, packaged in linen gift wrap, and safely dispatched across India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. MULTI-SECTION CUSTOM REQUEST FORM
+         ======================================================================= -->
+    <section class="custom-form-section" id="custom-form-section" aria-labelledby="custom-form-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Custom Studio Request</span>
+          <h2 class="section-title" id="custom-form-heading">Tell Us What You're Dreaming Of</h2>
+          <p class="section-desc">Take your time. No payment is required today — we'll review your idea and provide a custom quote first.</p>
+        </div>
+
+        <!-- Form Wrapper Card -->
+        <div class="form-wrapper-card" id="custom-form-wrapper">
+
+          <!-- Stepper Header Navigation -->
+          <div class="form-stepper-header" role="tablist" aria-label="Request Steps">
+            <button type="button" class="stepper-step-btn active" data-step="1">
+              <span class="step-bubble">1</span>
+              <span>About Idea</span>
+            </button>
+            <button type="button" class="stepper-step-btn" data-step="2">
+              <span class="step-bubble">2</span>
+              <span>Reference</span>
+            </button>
+            <button type="button" class="stepper-step-btn" data-step="3">
+              <span class="step-bubble">3</span>
+              <span>Details</span>
+            </button>
+            <button type="button" class="stepper-step-btn" data-step="4">
+              <span class="step-bubble">4</span>
+              <span>Budget & Date</span>
+            </button>
+            <button type="button" class="stepper-step-btn" data-step="5">
+              <span class="step-bubble">5</span>
+              <span>Contact</span>
+            </button>
+            <button type="button" class="stepper-step-btn" data-step="6">
+              <span class="step-bubble">6</span>
+              <span>Review & Send</span>
+            </button>
+          </div>
+
+          <!-- ================= STEP 1: ABOUT YOUR IDEA ================= -->
+          <div class="form-step-panel active" id="step-1-panel">
+            <h3 class="step-panel-title">
+              <span>🌸</span>
+              <span>What would you like us to make?</span>
+            </h3>
+            <p class="step-panel-subtitle">Describe your vision in your own words. It can be as detailed or simple as you like!</p>
+
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="custom-category-select">Select a category (Optional)</label>
+              <select class="friendly-select" id="custom-category-select">
+                <option value="">-- Choose a category (or leave open) --</option>
+                <option value="Plushie">Plushie (Amigurumi animals, cute characters)</option>
+                <option value="Flower / Bouquet">Flower / Bouquet (Single blooms, tailored bunches)</option>
+                <option value="Accessory">Accessory (Hairpins, headbands, brooches)</option>
+                <option value="Bag">Bag (Tote bag, phone pouch, coin purse)</option>
+                <option value="Keychain">Keychain (Charm, miniature animals, matching hearts)</option>
+                <option value="Home Decor">Home Decor (Potted crochet plant, coaster set, wall hanging)</option>
+                <option value="Gift">Personalized Gift (Wedding couple, newborn keepsake, milestone)</option>
+                <option value="Other">Other (Something entirely original)</option>
+              </select>
+            </div>
+
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="custom-idea-desc">
+                Tell us about your idea <span style="color: var(--color-primary);">*</span>
+              </label>
+              <textarea class="friendly-textarea" id="custom-idea-desc" placeholder="Tell us about your idea… (e.g. A small crochet dog replica of my pet cockapoo with curly caramel ears and a tiny blue collar, or a 7-stem pastel lavender bouquet for my mom's birthday)"></textarea>
+              <div class="friendly-field-help">💡 Don't worry about knowing crochet terminology — just tell us what feels special to you!</div>
+            </div>
+
+            <div class="form-step-footer">
+              <span class="text-subtle">Step 1 of 6</span>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextStep()">
+                Next: Reference Photos →
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 2: REFERENCE ================= -->
+          <div class="form-step-panel" id="step-2-panel">
+            <h3 class="step-panel-title">
+              <span>📷</span>
+              <span>Show us what you're imagining</span>
+            </h3>
+            <p class="step-panel-subtitle">You can upload sketches, inspiration photos, color palettes, or examples of things you love.</p>
+
+            <!-- Dropzone -->
+            <div class="image-upload-dropzone" id="custom-image-dropzone" tabindex="0" role="button" aria-label="Drop images here or click to browse">
+              <span class="dropzone-icon">☁️</span>
+              <h4 class="dropzone-title">Drop an image here or browse</h4>
+              <p class="dropzone-sub">Upload sketches, inspiration photos, colors, or examples (JPG, PNG, WEBP)</p>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="event.stopPropagation(); document.getElementById('custom-file-input').click();">
+                Select Photos from Phone / Computer
+              </button>
+              <input type="file" id="custom-file-input" accept="image/*" multiple style="display: none;">
+            </div>
+
+            <!-- Uploaded Thumbs Grid -->
+            <div class="uploaded-thumbs-grid" id="uploaded-thumbs-grid"></div>
+
+            <div class="form-step-footer">
+              <button type="button" class="btn btn-secondary btn-md" onclick="prevStep()">
+                ← Back
+              </button>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextStep()">
+                Next: Custom Details →
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 3: CUSTOM DETAILS ================= -->
+          <div class="form-step-panel" id="step-3-panel">
+            <h3 class="step-panel-title">
+              <span>🧶</span>
+              <span>Custom Details & Materials</span>
+            </h3>
+            <p class="step-panel-subtitle">Fine-tune the colors, dimensions, and texture so your piece turns out just as imagined.</p>
+
+            <!-- Preferred Colors -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label">Preferred colors (Select all that apply)</label>
+              <div class="options-pill-grid">
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-cream" name="preferred-colors" value="Cream / Warm Ivory">
+                  <label for="color-cream">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #FAF0E6; border: 1px solid #D9C8B8; margin-bottom: 4px;"></span>
+                    <span>Cream / Ivory</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-rose" name="preferred-colors" value="Dusty Rose Pink" checked>
+                  <label for="color-rose">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #D96C8A; margin-bottom: 4px;"></span>
+                    <span>Dusty Rose</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-honey" name="preferred-colors" value="Warm Honey Gold">
+                  <label for="color-honey">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #D9A441; margin-bottom: 4px;"></span>
+                    <span>Honey Gold</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-sage" name="preferred-colors" value="Sage Mint Green">
+                  <label for="color-sage">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #7B8F77; margin-bottom: 4px;"></span>
+                    <span>Sage Green</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-lavender" name="preferred-colors" value="Lilac Lavender">
+                  <label for="color-lavender">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #B8A2C8; margin-bottom: 4px;"></span>
+                    <span>Lavender</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="checkbox" id="color-caramel" name="preferred-colors" value="Warm Cocoa / Brown">
+                  <label for="color-caramel">
+                    <span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #6B5B5E; margin-bottom: 4px;"></span>
+                    <span>Warm Cocoa</span>
+                  </label>
+                </div>
+              </div>
+              <input type="text" id="custom-color-text" class="friendly-input" placeholder="Other specific colors? (e.g. Matcha green, sky pastel, specific pet coat shades...)" style="margin-top: 10px;">
+            </div>
+
+            <!-- Preferred Size -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label">Preferred size</label>
+              <div class="options-pill-grid">
+                <div class="option-pill-choice">
+                  <input type="radio" id="size-mini" name="preferred-size" value="Mini / Pocket (~8–10cm)">
+                  <label for="size-mini">
+                    <strong>Mini / Pocket</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">~8–10 cm</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="size-med" name="preferred-size" value="Medium (~18–22cm)" checked>
+                  <label for="size-med">
+                    <strong>Medium / Standard</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">~18–22 cm</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="size-large" name="preferred-size" value="Large (~28–35cm)">
+                  <label for="size-large">
+                    <strong>Large / Statement</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">~28–35 cm</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="size-custom" name="preferred-size" value="Custom Dimensions">
+                  <label for="size-custom">
+                    <strong>Custom Size</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">Tailored scale</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quantity Stepper -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label">Quantity</label>
+              <div class="qty-stepper" style="width: fit-content;">
+                <button type="button" class="qty-btn" onclick="adjustCustomQty(-1)" aria-label="Decrease quantity">−</button>
+                <span class="qty-value" id="custom-qty-val">1</span>
+                <button type="button" class="qty-btn" onclick="adjustCustomQty(1)" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <!-- Material Preferences -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label">Material preferences</label>
+              <div class="options-pill-grid">
+                <div class="option-pill-choice">
+                  <input type="radio" id="mat-milk" name="preferred-material" value="Combed Milk Cotton (Ultra Soft)" checked>
+                  <label for="mat-milk">
+                    <strong>Milk Cotton</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">Soft, smooth, durable</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="mat-chenille" name="preferred-material" value="Chunky Velvet Chenille">
+                  <label for="mat-chenille">
+                    <strong>Velvet Chenille</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">Plush & fluffy</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="mat-organic" name="preferred-material" value="100% Organic Raw Cotton">
+                  <label for="mat-organic">
+                    <strong>Organic Cotton</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">Matte, natural feel</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="mat-maker" name="preferred-material" value="Maker's Choice (Best Match)">
+                  <label for="mat-maker">
+                    <strong>Maker's Choice</strong>
+                    <span style="font-size: 0.7rem; color: var(--color-dark-subtle);">We pick best yarn</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Special Details Textarea -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="custom-extra-notes">Anything else we should know?</label>
+              <textarea class="friendly-textarea" id="custom-extra-notes" style="min-height: 90px;" placeholder="Add special details (e.g. Safety eyes vs embroidered eyes for toddlers, custom engraved wooden tag name, ribbon color preference...)"></textarea>
+            </div>
+
+            <div class="form-step-footer">
+              <button type="button" class="btn btn-secondary btn-md" onclick="prevStep()">
+                ← Back
+              </button>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextStep()">
+                Next: Budget & Timeline →
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 4: BUDGET & TIMELINE ================= -->
+          <div class="form-step-panel" id="step-4-panel">
+            <h3 class="step-panel-title">
+              <span>📅</span>
+              <span>Budget & Timeline</span>
+            </h3>
+            <p class="step-panel-subtitle">Help us tailor the design to your comfort level and deliver on your schedule.</p>
+
+            <!-- Budget Selector -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label">Target Budget (INR)</label>
+              <div class="budget-cards-grid">
+                <div class="option-pill-choice">
+                  <input type="radio" id="budget-1" name="preferred-budget" value="Under ₹500">
+                  <label for="budget-1" class="budget-card-label">
+                    <strong>Under ₹500</strong>
+                    <span style="font-size: 0.68rem; color: var(--color-dark-subtle);">Small keychains, charms</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="budget-2" name="preferred-budget" value="₹500–₹1,000">
+                  <label for="budget-2" class="budget-card-label">
+                    <strong>₹500–₹1,000</strong>
+                    <span style="font-size: 0.68rem; color: var(--color-dark-subtle);">Mini plushie, 3-stem bunch</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="budget-3" name="preferred-budget" value="₹1,000–₹2,000" checked>
+                  <label for="budget-3" class="budget-card-label">
+                    <strong>₹1,000–₹2,000</strong>
+                    <span style="font-size: 0.68rem; color: var(--color-dark-subtle);">Bouquets, pet replica, bag</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="budget-4" name="preferred-budget" value="₹2,000–₹5,000">
+                  <label for="budget-4" class="budget-card-label">
+                    <strong>₹2,000–₹5,000</strong>
+                    <span style="font-size: 0.68rem; color: var(--color-dark-subtle);">Deluxe couple dolls, large set</span>
+                  </label>
+                </div>
+                <div class="option-pill-choice">
+                  <input type="radio" id="budget-5" name="preferred-budget" value="₹5,000+">
+                  <label for="budget-5" class="budget-card-label">
+                    <strong>₹5,000+</strong>
+                    <span style="font-size: 0.68rem; color: var(--color-dark-subtle);">Heirloom collection, bulk</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Required-by Date -->
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="custom-required-date">Required-by date (Optional)</label>
+              <input type="date" id="custom-required-date" class="friendly-input" style="max-width: 260px;">
+              <div class="craft-reassurance-box" style="margin-top: 14px;">
+                <span>⏳</span>
+                <div>
+                  <strong>Slow Craft Timing Note:</strong> Custom pieces may require additional preparation time depending on complexity (usually 5–10 business days for bespoke pattern making & stitching).
+                </div>
+              </div>
+            </div>
+
+            <div class="form-step-footer">
+              <button type="button" class="btn btn-secondary btn-md" onclick="prevStep()">
+                ← Back
+              </button>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextStep()">
+                Next: Contact Details →
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 5: CONTACT DETAILS ================= -->
+          <div class="form-step-panel" id="step-5-panel">
+            <h3 class="step-panel-title">
+              <span>💌</span>
+              <span>Where should we send your quote?</span>
+            </h3>
+            <p class="step-panel-subtitle">We will reach out with availability, estimated pricing, and draft design notes within 24 hours.</p>
+
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="contact-name">
+                Your Full Name <span style="color: var(--color-primary);">*</span>
+              </label>
+              <input type="text" id="contact-name" class="friendly-input" placeholder="e.g. Maya Sharma" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+              <div class="friendly-field-group">
+                <label class="friendly-field-label" for="contact-phone">
+                  Phone / WhatsApp <span style="color: var(--color-primary);">*</span>
+                </label>
+                <input type="tel" id="contact-phone" class="friendly-input" placeholder="e.g. +91 98765 43210" required>
+              </div>
+
+              <div class="friendly-field-group">
+                <label class="friendly-field-label" for="contact-email">
+                  Email Address
+                </label>
+                <input type="email" id="contact-email" class="friendly-input" placeholder="e.g. maya@example.com">
+              </div>
+            </div>
+
+            <div class="friendly-field-group">
+              <label class="friendly-field-label" for="contact-city">City / State</label>
+              <input type="text" id="contact-city" class="friendly-input" placeholder="e.g. Mumbai, Maharashtra (Delivery in India)">
+            </div>
+
+            <div class="friendly-field-group">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: var(--text-xs); color: var(--color-dark-muted);">
+                <input type="checkbox" id="contact-pref-whatsapp" checked style="accent-color: #25D366; width: 16px; height: 16px;">
+                <span>💬 Prefer WhatsApp for quick photo updates & design discussion</span>
+              </label>
+            </div>
+
+            <div class="form-step-footer">
+              <button type="button" class="btn btn-secondary btn-md" onclick="prevStep()">
+                ← Back
+              </button>
+              <button type="button" class="btn btn-primary btn-md" onclick="nextStep()">
+                Review & Confirm →
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= STEP 6: REVIEW & SUBMIT ================= -->
+          <div class="form-step-panel" id="step-6-panel">
+            <h3 class="step-panel-title">
+              <span>✨</span>
+              <span>Review Your Custom Request</span>
+            </h3>
+            <p class="step-panel-subtitle">Double-check your idea before our studio artisan reviews it.</p>
+
+            <!-- Dynamic Review Summary Container -->
+            <div class="request-review-card" id="review-summary-container">
+              <!-- Populated by js/custom.js -->
+            </div>
+
+            <!-- Trust Reassurance Banner -->
+            <div class="craft-reassurance-box">
+              <span style="font-size: 1.4rem;">🔒</span>
+              <div>
+                <strong>No payment required today!</strong>
+                <p style="margin: 4px 0 0; font-size: var(--text-xs); color: var(--color-dark-muted);">
+                  This submission is completely obligation-free. Our studio maker will carefully review your idea, calculate exact materials and hours, and send you a custom quote with photos and estimated delivery date.
+                </p>
+              </div>
+            </div>
+
+            <!-- Submit CTA -->
+            <div style="text-align: center; margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-primary btn-lg" style="width: 100%; max-width: 440px; padding: 16px 28px; font-size: var(--text-base);" onclick="submitCustomRequest(event)">
+                Send Custom Request ♡
+              </button>
+              <p class="text-subtle" style="margin-top: 10px; font-size: var(--text-xs);">
+                We'll review your idea and get back to you with availability, estimated pricing, and timeline.
+              </p>
+            </div>
+
+            <div class="form-step-footer" style="margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-secondary btn-md" onclick="prevStep()">
+                ← Back to Edit
+              </button>
+              <span class="text-subtle">Ready to send!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= SUCCESS STATE CARD ================= -->
+        <div class="custom-success-card" id="custom-success-card">
+          <div class="success-heart-icon">♡</div>
+          <h2 class="success-heading">Your idea is on its way ♡</h2>
+          <p class="success-body">
+            Thank you for trusting BabyGurl Crochet with your idea. We'll take a look and get back to you soon with availability, custom yarn options, and an exact quote.
+          </p>
+
+          <div class="success-meta-box">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span class="text-muted">Request Reference:</span>
+              <strong style="color: var(--color-primary); font-family: var(--font-editorial); font-size: 1rem;" id="success-request-id">BGC-CUST-8492</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <span class="text-muted">Updates sent to:</span>
+              <strong id="success-contact-info">Your WhatsApp / Email</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-muted">Expected Response:</span>
+              <strong style="color: var(--color-success);">Within 24 hours</strong>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+            <a href="shop.html" class="btn btn-primary btn-md">
+              Back to Shop
+            </a>
+            <button type="button" class="btn btn-secondary btn-md" onclick="openStatusModal()">
+              View My Requests
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. CUSTOM REQUEST STATUS CONCEPT (Transparency Pipeline)
+         ======================================================================= -->
+    <section class="custom-status-section" aria-labelledby="status-concept-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Always In The Loop</span>
+          <h2 class="section-title" id="status-concept-heading">How You Track Your Request</h2>
+          <p class="section-desc">Once submitted, you can check your order status anytime from your account or via WhatsApp updates.</p>
+        </div>
+
+        <div class="status-flow-track">
+          <!-- Step 1 -->
+          <div class="status-flow-step active">
+            <span class="step-icon">📩</span>
+            <span class="step-label">Request Submitted</span>
+            <span class="step-hint">Idea received</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🔍</span>
+            <span class="step-label">Under Review</span>
+            <span class="step-hint">Maker analyzing</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="status-flow-step">
+            <span class="step-icon">📋</span>
+            <span class="step-label">Quote Ready</span>
+            <span class="step-hint">Price & timeline sent</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🤝</span>
+            <span class="step-label">Awaiting Confirmation</span>
+            <span class="step-hint">Your approval</span>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🧶</span>
+            <span class="step-label">In Production</span>
+            <span class="step-hint">Hand-crocheting</span>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🎁</span>
+            <span class="step-label">Ready</span>
+            <span class="step-hint">Gift packed</span>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🚚</span>
+            <span class="step-label">Shipped</span>
+            <span class="step-hint">Courier on way</span>
+          </div>
+
+          <!-- Step 8 -->
+          <div class="status-flow-step">
+            <span class="step-icon">🌸</span>
+            <span class="step-label">Delivered</span>
+            <span class="step-hint">Cherished forever</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. CUSTOM CREATION GALLERY (“Some things we've made”)
+         ======================================================================= -->
+    <section class="custom-gallery-section" id="previous-creations" aria-labelledby="creations-gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Studio Archives</span>
+          <h2 class="section-title" id="creations-gallery-heading">Some things we've made</h2>
+          <p class="section-desc">Each piece began as a simple message from someone like you.</p>
+        </div>
+
+        <div class="custom-gallery-grid">
+          <!-- 1. Custom Pet Plushie -->
+          <article class="custom-creation-card">
+            <div class="custom-creation-media">
+              <img src="assets/images/pet_plushie.jpg" alt="Custom Pet Plushie - Milo the puppy dog amigurumi" loading="lazy">
+            </div>
+            <div class="custom-creation-body">
+              <span class="custom-creation-tag">Pet Keepsake</span>
+              <h3 class="custom-creation-title">Custom Pet Plushie</h3>
+              <p class="custom-creation-desc">
+                Crafted from photos of Milo, a rescue puppy dog. Replicated with caramel milk cotton patches, soft floppy ears, and an engraved wooden nametag.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm btn-request-similar" data-title="Custom Pet Plushie" data-category="Plushie">
+                Request Something Similar →
+              </button>
+            </div>
+          </article>
+
+          <!-- 2. Personalized Flower Bouquet -->
+          <article class="custom-creation-card">
+            <div class="custom-creation-media">
+              <img src="assets/images/bouquet.jpg" alt="Personalized Flower Bouquet with daisies and wildflowers" loading="lazy">
+            </div>
+            <div class="custom-creation-body">
+              <span class="custom-creation-tag">Everlasting Florals</span>
+              <h3 class="custom-creation-title">Personalized Flower Bouquet</h3>
+              <p class="custom-creation-desc">
+                A custom 9-stem bunch combining soft daisies, blush roses, and eucalyptus sprigs for a grandmother's 70th birthday.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm btn-request-similar" data-title="Personalized Flower Bouquet" data-category="Flower / Bouquet">
+                Request Something Similar →
+              </button>
+            </div>
+          </article>
+
+          <!-- 3. Mini Couple Dolls -->
+          <article class="custom-creation-card">
+            <div class="custom-creation-media">
+              <img src="assets/images/bear.jpg" alt="Mini Couple Dolls keepsake" loading="lazy">
+            </div>
+            <div class="custom-creation-body">
+              <span class="custom-creation-tag">Anniversary & Wedding</span>
+              <h3 class="custom-creation-title">Mini Couple Dolls</h3>
+              <p class="custom-creation-desc">
+                Handmade companion bears matching the real couple's wedding attire, tied with a tiny heart charm and customized date tag.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm btn-request-similar" data-title="Mini Couple Dolls" data-category="Gift">
+                Request Something Similar →
+              </button>
+            </div>
+          </article>
+
+          <!-- 4. Custom Character -->
+          <article class="custom-creation-card">
+            <div class="custom-creation-media">
+              <img src="assets/images/mushroom.jpg" alt="Custom Character fairytale plushie" loading="lazy">
+            </div>
+            <div class="custom-creation-body">
+              <span class="custom-creation-tag">Fairytale & Amigurumi</span>
+              <h3 class="custom-creation-title">Custom Character</h3>
+              <p class="custom-creation-desc">
+                Brought a client's whimsical fantasy woodland creature sketch to life with spotted mushroom cap and soft blush cheeks.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm btn-request-similar" data-title="Custom Character" data-category="Plushie">
+                Request Something Similar →
+              </button>
+            </div>
+          </article>
+
+          <!-- 5. Crochet Memory Gift -->
+          <article class="custom-creation-card">
+            <div class="custom-creation-media">
+              <img src="assets/images/heart_keychain.jpg" alt="Crochet Memory Gift keychains" loading="lazy">
+            </div>
+            <div class="custom-creation-body">
+              <span class="custom-creation-tag">Milestone Keepsake</span>
+              <h3 class="custom-creation-title">Crochet Memory Gift</h3>
+              <p class="custom-creation-desc">
+                Twin heart keychains hand-crocheted in blush and cream cotton, gifted between best friends heading off to university.
+              </p>
+              <button type="button" class="btn btn-secondary btn-sm btn-request-similar" data-title="Crochet Memory Gift" data-category="Keychain">
+                Request Something Similar →
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. FAQ SECTION (Expandable Accordions)
+         ======================================================================= -->
+    <section class="custom-faq-section" aria-labelledby="custom-faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2 class="section-title" id="custom-faq-heading">Frequently Asked Questions</h2>
+          <p class="section-desc">Everything you need to know about our custom handmade process.</p>
+        </div>
+
+        <div class="faq-container">
+          <!-- Q1 -->
+          <details class="faq-item" open>
+            <summary>
+              <span>How much do custom pieces cost?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Pricing depends on the size, intricacy, pattern complexity, and yarn material required. Small keychains and charms typically start around ₹249–₹499; individual flowers and plushies range from ₹499–₹1,299; and intricate pet replicas or large bespoke bouquets range from ₹1,499–₹3,500. We will provide an exact, itemized quote before you commit to anything.
+            </div>
+          </details>
+
+          <!-- Q2 -->
+          <details class="faq-item">
+            <summary>
+              <span>How long does a custom order take?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Because each piece is designed, pattern-drafted, and crocheted stitch by stitch by human hands, preparation typically takes 5–10 business days before dispatch. If you have an urgent date (e.g. an anniversary or birthday in 7 days), please mention it in the timeline section and we will do our best to accommodate express studio crafting.
+            </div>
+          </details>
+
+          <!-- Q3 -->
+          <details class="faq-item">
+            <summary>
+              <span>Can I send a reference image?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes, absolutely! Reference images make the design process much smoother. You can upload photos of real pets from different angles, sketches, Pinterest boards, screenshots, or color swatches directly in Step 2 of our request form or via WhatsApp.
+            </div>
+          </details>
+
+          <!-- Q4 -->
+          <details class="faq-item">
+            <summary>
+              <span>Can you recreate a specific character or object?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes! We love bringing characters, mascots, animated icons, and symbolic sentimental objects into amigurumi crochet. We adapt 2D designs into tactile 3D crochet forms while respecting character proportions and signature colors.
+            </div>
+          </details>
+
+          <!-- Q5 -->
+          <details class="faq-item">
+            <summary>
+              <span>Can I request a specific color?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes. We maintain a large studio inventory of combed milk cotton yarns in over 60 shades — including vintage pastels, earthy neutrals, vibrant botanicals, and soft muted heather tones. If you have a specific hex code or fabric sample, we can match it closely.
+            </div>
+          </details>
+
+          <!-- Q6 -->
+          <details class="faq-item">
+            <summary>
+              <span>Can I cancel a custom order?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              You can cancel freely at any time before confirming your quote and approving production. Once production begins and custom yarn has been dyed or cut, cancellations may only receive a partial refund depending on how much work has already been completed.
+            </div>
+          </details>
+
+          <!-- Q7 -->
+          <details class="faq-item">
+            <summary>
+              <span>Do you ship custom orders across India?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes! We ship to all pin codes across India via insured express courier delivery (Bluedart, Delhivery, Speed Post). Real-time courier tracking numbers are sent via SMS and email once your package leaves our studio.
+            </div>
+          </details>
+
+          <!-- Q8 -->
+          <details class="faq-item">
+            <summary>
+              <span>Can I order a custom piece as a gift?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes! Over 60% of our custom orders are gifts. Every custom creation comes packaged in our signature kraft box with raw-edge cream linen ribbon and dried floral accents. We can also include a free handwritten calligraphy card with your personal message and ship directly to the recipient's address with no price receipt included.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FLOATING WHATSAPP BUTTON (Mobile & Desktop Friendly)
+       ========================================================================= -->
+  <a href="https://wa.me/919876543210?text=Hi%20BabyGurl%20Crochet!%20I%20have%20an%20idea%20for%20a%20custom%20piece..." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Chat with maker on WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="label">Chat with Maker on WhatsApp</span>
+  </a>
+
+  <!-- =========================================================================
+       STATUS TRACKER MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="modal-card" id="custom-status-modal" aria-labelledby="modal-status-title">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" id="modal-status-title" style="margin: 0;">Request Status Tracker</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeStatusModal()">✕</button>
+    </div>
+    <div style="background: var(--bg-surface-warm); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px; border: 1px solid var(--border-card);">
+      <div style="font-size: var(--text-xs); color: var(--color-dark-muted);">Tracking Custom Order:</div>
+      <strong style="font-family: var(--font-editorial); font-size: 1.1rem; color: var(--color-primary);" id="modal-status-request-id">BGC-CUST-8492</strong>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-success); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px;">✓</span>
+        <div>
+          <strong style="font-size: var(--text-sm);">1. Request Submitted</strong>
+          <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Your idea is logged in our studio queue</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; animation: pulse-dot 1.5s infinite;">●</span>
+        <div>
+          <strong style="font-size: var(--text-sm); color: var(--color-primary);">2. Under Review (Current)</strong>
+          <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Studio artisan verifying yarn palette & craft hours</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; opacity: 0.5;">
+        <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; font-size: 11px;">3</span>
+        <div>
+          <strong style="font-size: var(--text-sm);">3. Quote Ready</strong>
+          <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Final price & preview photo sent to you</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; opacity: 0.5;">
+        <span style="width: 24px; height: 24px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-card); display: flex; align-items: center; justify-content: center; font-size: 11px;">4</span>
+        <div>
+          <strong style="font-size: var(--text-sm);">4. In Production</strong>
+          <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Hand-crocheting stitch by stitch</div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-secondary btn-sm" style="width: 100%;" onclick="closeStatusModal()">
+      Close Tracker
+    </button>
+  </dialog>
+
+  <!-- Search Modal -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handleSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- Cart Drawer -->
+  <dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-title">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🌸</span>
+        <h3 class="heading-3" id="drawer-title" style="margin: 0;">Your Basket</h3>
+      </div>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('cart-drawer').close()">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="cart-items-list" style="padding: 12px 0;">
+        <div class="cart-item-row">
+          <img src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet" class="cart-item-thumb">
+          <div class="cart-item-details">
+            <h4 class="cart-item-title">Crochet Tulip Bouquet</h4>
+            <span class="cart-item-variant">Pink • Small (3 Stems)</span>
+            <div class="cart-item-footer">
+              <span style="font-weight: var(--weight-semibold); font-size: var(--text-sm);">₹799</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <span class="text-muted">Subtotal:</span>
+        <span style="font-family: var(--font-editorial); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-dark);">₹799</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <a href="checkout.html" class="btn btn-primary btn-lg" style="width: 100%; text-align: center;">
+          Checkout Now →
+        </a>
+        <a href="cart.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">
+          View Basket Details
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 4px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="21"/><path d="M8 12a4 4 0 1 1 8 0c0 2.2-1.3 4-3 4s-1.5-.7-2-1.5L10 18"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="btn-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="product-details.html" class="footer-link">Tulip Bouquet</a>
+        <a href="custom-crochet.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Custom Crochet</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showCustomToast('Custom orders take 5–10 days before insured dispatch 📦'); return false;">Custom Order Policy</a>
+        <a href="#" class="footer-link" onclick="showCustomToast('Safe, insured express courier across India 🇮🇳'); return false;">Shipping Info</a>
+        <a href="#" class="footer-link" onclick="showCustomToast('Your private information is 100% secure 🔒'); return false;">Privacy</a>
+        <a href="design-system.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Design System Spec ↗</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed secure checkout after quote approval.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / GPay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 NetBanking</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Imagine it. We'll crochet it.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Custom Page Interaction Engine -->
+  <script src="js/custom.js"></script>
+
+  <script>
+    function handleSearch(q) {
+      const box = document.getElementById('search-results-box');
+      if (!box) return;
+      if (!q.trim()) {
+        box.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>';
+        return;
+      }
+      box.innerHTML = `
+        <a href="shop.html" style="padding: 10px; background: var(--bg-surface-warm); border-radius: var(--radius-sm); font-size: var(--text-sm); display: block; color: var(--color-dark);">
+          Browse all results for "<strong>${q}</strong>" in Shop →
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

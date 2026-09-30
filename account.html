@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | BabyGurl Crochet</title>
+  <meta name="description" content="Manage your handmade crochet orders, track your custom pieces, view your wishlist, and update delivery addresses.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Account Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/account.css">
+</head>
+<body class="account-logged-in">
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="document.getElementById('search-modal').showModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="javascript:void(0)" onclick="switchAccountView('wishlist')" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account (Active) -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account" style="color: var(--color-primary);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <a href="cart.html" class="btn-icon cart-btn-indicator" id="btn-header-cart" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count">1</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-main-wrap" id="account-main-content">
+    <div class="container">
+
+      <!-- =====================================================================
+           1. AUTH ENTRY CONTAINER (When logged out)
+           ===================================================================== -->
+      <div class="account-auth-container" id="account-auth-container" style="display: none;">
+        <div class="account-auth-card">
+          <div class="auth-card-icon">🌸</div>
+
+          <!-- Tabs Toggle (Sign In / Sign Up) -->
+          <div class="auth-tabs-toggle">
+            <button type="button" class="auth-tab-btn active" id="tab-btn-login" onclick="switchAuthTab('login')">Sign In</button>
+            <button type="button" class="auth-tab-btn" id="tab-btn-signup" onclick="switchAuthTab('signup')">Create Account</button>
+          </div>
+
+          <!-- LOGIN PANEL -->
+          <div class="auth-panel active" id="auth-panel-login">
+            <h1 class="auth-card-title">Welcome back ♡</h1>
+            <p class="auth-card-sub">Your handmade favorites are waiting for you.</p>
+
+            <form onsubmit="handleLoginSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="login-email">Email Address</label>
+                <input type="email" id="login-email" class="form-input" placeholder="maya@example.com" value="maya.sharma@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="login-password">Password</label>
+                <input type="password" id="login-password" class="form-input" placeholder="••••••••" value="crochet123" required>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                <label style="display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--color-dark-muted); cursor: pointer;">
+                  <input type="checkbox" checked style="accent-color: var(--color-primary);"> Remember me
+                </label>
+                <a href="#" style="font-size: var(--text-xs); color: var(--color-primary); text-decoration: underline;" onclick="showAccountToast('Password reset link sent to your email 💌'); return false;">
+                  Forgot Password?
+                </a>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Sign In
+              </button>
+            </form>
+
+            <div class="auth-divider">or</div>
+
+            <button type="button" class="social-auth-btn" onclick="handleLoginSubmit(event)">
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+              <span>Continue with Google</span>
+            </button>
+
+            <p style="font-size: var(--text-xs); color: var(--color-dark-muted); text-align: center; margin-top: 20px;">
+              New to BabyGurl Crochet? <a href="javascript:void(0)" onclick="switchAuthTab('signup')" style="color: var(--color-primary); font-weight: var(--weight-semibold); text-decoration: underline;">Create an Account</a>
+            </p>
+          </div>
+
+          <!-- SIGN UP PANEL -->
+          <div class="auth-panel" id="auth-panel-signup">
+            <h1 class="auth-card-title">Join the BabyGurl family ♡</h1>
+            <p class="auth-card-sub">Save your favorite pieces, track custom orders, and enjoy faster checkout.</p>
+
+            <form onsubmit="handleSignupSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="signup-name">Full Name *</label>
+                <input type="text" id="signup-name" class="form-input" placeholder="e.g. Maya Sharma" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="signup-email">Email Address *</label>
+                <input type="email" id="signup-email" class="form-input" placeholder="maya@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="signup-phone">Phone Number *</label>
+                <input type="tel" id="signup-phone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                  <label class="form-label" for="signup-pwd">Password *</label>
+                  <input type="password" id="signup-pwd" class="form-input" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="signup-cpwd">Confirm *</label>
+                  <input type="password" id="signup-cpwd" class="form-input" placeholder="••••••••" required>
+                </div>
+              </div>
+
+              <label style="display: flex; align-items: flex-start; gap: 8px; font-size: var(--text-xs); color: var(--color-dark-muted); margin-bottom: 16px; cursor: pointer;">
+                <input type="checkbox" required checked style="accent-color: var(--color-primary); margin-top: 2px;">
+                <span>I agree to the Terms and Privacy Policy.</span>
+              </label>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Create Account
+              </button>
+            </form>
+
+            <p style="font-size: var(--text-xs); color: var(--color-dark-muted); text-align: center; margin-top: 18px;">
+              Already have an account? <a href="javascript:void(0)" onclick="switchAuthTab('login')" style="color: var(--color-primary); font-weight: var(--weight-semibold); text-decoration: underline;">Sign In</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           2. LOGGED-IN CUSTOMER AREA (Sidebar + Content View)
+           ===================================================================== -->
+      <div class="account-app-layout" id="account-app-layout">
+
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="account-sidebar">
+          <div class="account-user-mini">
+            <div class="account-user-avatar" id="sidebar-user-avatar">M</div>
+            <div>
+              <div class="account-user-name" id="sidebar-user-name">Maya Sharma</div>
+              <div class="account-user-email" id="sidebar-user-email">maya.sharma@example.com</div>
+            </div>
+          </div>
+
+          <nav class="account-nav-list" aria-label="Account Navigation">
+            <button type="button" class="account-nav-btn active" data-view="dashboard">
+              <span>🏠 Overview</span>
+            </button>
+            <button type="button" class="account-nav-btn" data-view="orders">
+              <span>📦 My Orders</span>
+              <span class="account-nav-badge">2</span>
+            </button>
+            <button type="button" class="account-nav-btn" data-view="wishlist">
+              <span>♡ Things I love</span>
+              <span class="account-nav-badge wishlist-count-badge">3</span>
+            </button>
+            <button type="button" class="account-nav-btn" data-view="custom">
+              <span>✨ Custom Creations</span>
+              <span class="account-nav-badge">1</span>
+            </button>
+            <button type="button" class="account-nav-btn" data-view="addresses">
+              <span>📍 Saved Addresses</span>
+            </button>
+            <button type="button" class="account-nav-btn" data-view="settings">
+              <span>⚙️ Account Settings</span>
+            </button>
+            <button type="button" class="account-nav-btn" onclick="logoutUser()" style="color: var(--color-error); margin-top: 8px;">
+              <span>🚪 Sign Out</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Main Content Area Panels -->
+        <div>
+
+          <!-- ================= PANEL 1: DASHBOARD OVERVIEW ================= -->
+          <div class="account-view-panel active" id="view-panel-dashboard">
+            <!-- Greeting Banner -->
+            <div class="dashboard-banner-card">
+              <div>
+                <span class="badge badge-rose" style="margin-bottom: 6px;">Handmade Member</span>
+                <h1 class="panel-title" style="margin: 4px 0 6px;">Hello, <span id="dash-greeting-name">Maya</span> ♡</h1>
+                <p class="panel-subtitle" style="margin: 0;">Welcome back to your little corner of handmade things.</p>
+              </div>
+              <div style="font-size: 2.4rem;">🌸</div>
+            </div>
+
+            <!-- 4 Dashboard Cards -->
+            <div class="dashboard-stats-grid">
+              <a href="javascript:void(0)" class="stat-card-item" onclick="switchAccountView('orders')">
+                <span class="stat-card-icon">📦</span>
+                <span class="stat-card-count">2</span>
+                <span class="stat-card-label">Orders (1 In Craft)</span>
+              </a>
+              <a href="javascript:void(0)" class="stat-card-item" onclick="switchAccountView('wishlist')">
+                <span class="stat-card-icon">♡</span>
+                <span class="stat-card-count wishlist-count-badge">3</span>
+                <span class="stat-card-label">Saved in Wishlist</span>
+              </a>
+              <a href="javascript:void(0)" class="stat-card-item" onclick="switchAccountView('custom')">
+                <span class="stat-card-icon">✨</span>
+                <span class="stat-card-count">1</span>
+                <span class="stat-card-label">Custom Request Ready</span>
+              </a>
+              <a href="javascript:void(0)" class="stat-card-item" onclick="switchAccountView('addresses')">
+                <span class="stat-card-icon">📍</span>
+                <span class="stat-card-count">2</span>
+                <span class="stat-card-label">Saved Addresses</span>
+              </a>
+            </div>
+
+            <!-- Recent Order Highlight -->
+            <div class="dashboard-recent-box">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <h3 class="heading-4" style="margin: 0;">Latest Order in Craft</h3>
+                <span class="order-status-pill status-being-handmade">🧶 Being Handmade</span>
+              </div>
+
+              <div class="order-card-row" style="background: var(--bg-surface-warm); border-color: var(--color-secondary-border);">
+                <div>
+                  <div class="order-header-info">
+                    <span class="order-number-title">Order #BG1024</span>
+                    <span class="order-date-text">Placed on 24 Sep 2026</span>
+                  </div>
+                  <div class="order-thumbs-cluster">
+                    <img src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet" class="order-mini-thumb">
+                    <img src="assets/images/bear.jpg" alt="Mini Crochet Bear" class="order-mini-thumb">
+                  </div>
+                  <div class="order-items-summary-text">Crochet Tulip Bouquet, Mini Crochet Bear • ₹1,298</div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+                  <button type="button" class="btn btn-primary btn-sm" onclick="viewOrderDetails('BG1024')">
+                    Track Handmade Progress →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 2: MY ORDERS (History) ================= -->
+          <div class="account-view-panel" id="view-panel-orders">
+            <div class="panel-header-row">
+              <div>
+                <h2 class="panel-title">My Orders</h2>
+                <p class="panel-subtitle">Review previous pieces and track current creations in our studio.</p>
+              </div>
+            </div>
+
+            <div class="orders-list-stack">
+              <!-- Order 1: Active In Production -->
+              <article class="order-card-row">
+                <div>
+                  <div class="order-header-info">
+                    <span class="order-number-title">Order #BG1024</span>
+                    <span class="order-date-text">24 Sep 2026</span>
+                    <span class="order-status-pill status-being-handmade">🧶 Being Handmade</span>
+                  </div>
+
+                  <div class="order-thumbs-cluster">
+                    <img src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet" class="order-mini-thumb">
+                    <img src="assets/images/bear.jpg" alt="Mini Crochet Bear" class="order-mini-thumb">
+                  </div>
+                  <div class="order-items-summary-text">Crochet Tulip Bouquet (Pink), Mini Crochet Bear</div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+                  <strong style="font-family: var(--font-editorial); font-size: var(--text-lg); color: var(--color-dark);">₹1,298</strong>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="viewOrderDetails('BG1024')">
+                    View Order
+                  </button>
+                </div>
+              </article>
+
+              <!-- Order 2: Delivered -->
+              <article class="order-card-row">
+                <div>
+                  <div class="order-header-info">
+                    <span class="order-number-title">Order #BG0981</span>
+                    <span class="order-date-text">10 Aug 2026</span>
+                    <span class="order-status-pill status-delivered">✓ Delivered</span>
+                  </div>
+
+                  <div class="order-thumbs-cluster">
+                    <img src="assets/images/bouquet.jpg" alt="Crochet Daisy Bouquet" class="order-mini-thumb">
+                    <img src="assets/images/keychain.jpg" alt="Flower Keychain" class="order-mini-thumb">
+                  </div>
+                  <div class="order-items-summary-text">Crochet Daisy Bouquet, Flower Keychain</div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px; align-items: flex-end;">
+                  <strong style="font-family: var(--font-editorial); font-size: var(--text-lg); color: var(--color-dark);">₹898</strong>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="viewOrderDetails('BG0981')">
+                    View Order
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Orders Empty State -->
+            <div class="account-empty-state" id="orders-empty-box" style="display: none;">
+              <div class="account-empty-icon">📦</div>
+              <h3 class="account-empty-title">No orders yet ♡</h3>
+              <p class="account-empty-sub">Your first handmade treasure is waiting.</p>
+              <a href="shop.html" class="btn btn-primary btn-md">
+                Start Shopping →
+              </a>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 3: ORDER DETAILS & TRACKING ================= -->
+          <div class="account-view-panel" id="view-panel-order-detail">
+            <div class="panel-header-row">
+              <div>
+                <a href="javascript:void(0)" onclick="switchAccountView('orders')" style="font-size: var(--text-xs); color: var(--color-primary); text-decoration: underline; margin-bottom: 4px; display: inline-block;">
+                  ← Back to All Orders
+                </a>
+                <h2 class="panel-title">Order #BG1024</h2>
+                <p class="panel-subtitle">Placed on 24 Sep 2026 • Paid via UPI</p>
+              </div>
+              <span class="order-status-pill status-being-handmade">🧶 Being Handmade</span>
+            </div>
+
+            <!-- Handmade Tracking Journey Card -->
+            <div class="order-detail-card" style="background: var(--bg-surface-warm); border-color: var(--color-secondary-border);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 8px;">
+                <div>
+                  <h3 class="heading-4" style="margin-top: 0; margin-bottom: 4px;">Your order is becoming something special ♡</h3>
+                  <p class="text-subtle" style="font-size: var(--text-xs); margin: 0;">
+                    Our maker is shaping and stitching each petal and limb with soft combed cotton.
+                  </p>
+                </div>
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <span>💬</span>
+                  <span>Contact Us</span>
+                </a>
+              </div>
+
+              <!-- Tracking Key Info -->
+              <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0; padding: 12px 16px; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-card); font-size: var(--text-xs);">
+                <div><strong>Current Status:</strong> <span style="color: var(--color-primary); font-weight: var(--weight-semibold);">Being Handmade ●</span></div>
+                <div><strong>Estimated Delivery:</strong> <span>2–4 Oct 2026</span></div>
+                <div><strong>Carrier:</strong> <span>Delhivery Express</span></div>
+                <div><strong>Tracking Number:</strong> <span style="font-family: monospace; color: var(--color-dark);">DEL-9842104</span></div>
+              </div>
+
+              <!-- Timeline -->
+              <div class="craft-tracking-timeline">
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Order Placed<br><span style="font-size: 0.6rem; color: var(--color-dark-subtle);">24 Sep</span></div>
+                </div>
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Payment Confirmed<br><span style="font-size: 0.6rem; color: var(--color-dark-subtle);">24 Sep</span></div>
+                </div>
+                <div class="timeline-node active">
+                  <div class="timeline-dot">🧶</div>
+                  <div class="timeline-label">Being Handmade<br><span style="font-size: 0.6rem; color: var(--color-primary);">In Craft</span></div>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-dot">🎁</div>
+                  <div class="timeline-label">Ready to Ship</div>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-dot">🚚</div>
+                  <div class="timeline-label">Shipped</div>
+                </div>
+                <div class="timeline-node">
+                  <div class="timeline-dot">🌸</div>
+                  <div class="timeline-label">Delivered</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Items & Summary Breakdown -->
+            <div class="order-detail-card">
+              <h3 class="heading-4" style="margin-top: 0; margin-bottom: 16px;">Items in this Order</h3>
+              <div style="display: flex; flex-direction: column; gap: 14px; border-bottom: 1px solid var(--border-card); padding-bottom: 16px; margin-bottom: 16px;">
+                <!-- Item 1 -->
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/images/tulips.jpg" alt="Tulip bouquet" style="width: 56px; height: 56px; border-radius: var(--radius-md); object-fit: cover;">
+                    <div>
+                      <strong style="font-family: var(--font-editorial); font-size: var(--text-sm); color: var(--color-dark);">Crochet Tulip Bouquet</strong>
+                      <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Pink • Medium (5 Stems) • Qty: 1</div>
+                    </div>
+                  </div>
+                  <span style="font-weight: var(--weight-bold); font-size: var(--text-sm);">₹799</span>
+                </div>
+                <!-- Item 2 -->
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/images/bear.jpg" alt="Mini bear" style="width: 56px; height: 56px; border-radius: var(--radius-md); object-fit: cover;">
+                    <div>
+                      <strong style="font-family: var(--font-editorial); font-size: var(--text-sm); color: var(--color-dark);">Mini Crochet Bear</strong>
+                      <div style="font-size: var(--text-xs); color: var(--color-dark-subtle);">Warm Honey Caramel • Qty: 1</div>
+                    </div>
+                  </div>
+                  <span style="font-weight: var(--weight-bold); font-size: var(--text-sm);">₹499</span>
+                </div>
+              </div>
+
+              <!-- Price Breakdown -->
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: var(--text-xs); max-width: 300px; margin-left: auto;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span class="text-muted">Subtotal:</span>
+                  <strong>₹1,298</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span class="text-muted">Studio Delivery & Packaging:</span>
+                  <strong style="color: var(--color-success);">FREE (Over ₹1,000)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: var(--text-base); font-family: var(--font-editorial); padding-top: 6px; border-top: 1px solid var(--border-card);">
+                  <span>Total Paid:</span>
+                  <span style="color: var(--color-dark); font-weight: var(--weight-bold);">₹1,298</span>
+                </div>
+              </div>
+
+              <!-- Shipping Info -->
+              <div style="margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--border-card); font-size: var(--text-xs); color: var(--color-dark-muted);">
+                <strong>Delivery To:</strong> Maya Sharma • Flat 402, Bloom Residencies, Linking Road, Mumbai, Maharashtra 400050<br>
+                <strong>Carrier:</strong> Delhivery Express (Tracking #DEL-9842104 assigned upon dispatch)
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 4: WISHLIST (“Things I love ♡”) ================= -->
+          <div class="account-view-panel" id="view-panel-wishlist">
+            <div class="panel-header-row">
+              <div>
+                <h2 class="panel-title">Things I love ♡</h2>
+                <p class="panel-subtitle">Handmade pieces you've saved for future gifting or special moments.</p>
+              </div>
+            </div>
+
+            <!-- Wishlist Grid -->
+            <div class="wishlist-cards-grid" id="wishlist-grid-container">
+              <!-- Rendered via js/account.js -->
+            </div>
+
+            <!-- Wishlist Empty State -->
+            <div class="account-empty-state" id="wishlist-empty-box" style="display: none;">
+              <div class="account-empty-icon">♡</div>
+              <h3 class="account-empty-title">Nothing saved yet ♡</h3>
+              <p class="account-empty-sub">Found something you love? Tap the heart icon on any product to save it here.</p>
+              <a href="shop.html" class="btn btn-primary btn-md">
+                Explore the Shop →
+              </a>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 5: CUSTOM CREATIONS ================= -->
+          <div class="account-view-panel" id="view-panel-custom">
+            <div class="panel-header-row">
+              <div>
+                <h2 class="panel-title">My Custom Creations</h2>
+                <p class="panel-subtitle">Track custom requests, review quotes, and communicate with your maker.</p>
+              </div>
+              <a href="custom-crochet.html" class="btn btn-primary btn-sm">
+                + New Request
+              </a>
+            </div>
+
+            <!-- Custom Requests List -->
+            <div class="custom-requests-grid">
+              <article class="custom-req-card">
+                <img src="assets/images/pet_plushie.jpg" alt="Custom Pet Plushie Milo" class="custom-req-thumb">
+                <div>
+                  <span class="order-status-pill status-quote-ready" id="custom-req-status-pill" style="margin-bottom: 6px;">📋 Quote Ready</span>
+                  <h3 class="custom-req-title">Custom Pet Plushie (Milo)</h3>
+                  <div style="font-size: var(--text-xs); color: var(--color-dark-subtle); margin-bottom: 8px;">Submitted on 12 Sep 2026</div>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="switchAccountView('custom-detail')">
+                    View Request
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <!-- Custom Requests Empty State -->
+            <div class="account-empty-state" id="custom-empty-box" style="display: none;">
+              <div class="account-empty-icon">✨</div>
+              <h3 class="account-empty-title">No custom creations yet.</h3>
+              <p class="account-empty-sub">Have an idea? Let's make it real.</p>
+              <a href="custom-crochet.html" class="btn btn-primary btn-md">
+                Start a Custom Request →
+              </a>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 6: CUSTOM REQUEST DETAIL ================= -->
+          <div class="account-view-panel" id="view-panel-custom-detail">
+            <div class="panel-header-row">
+              <div>
+                <a href="javascript:void(0)" onclick="switchAccountView('custom')" style="font-size: var(--text-xs); color: var(--color-primary); text-decoration: underline; margin-bottom: 4px; display: inline-block;">
+                  ← Back to Custom Creations
+                </a>
+                <h2 class="panel-title">Custom Pet Plushie (Milo)</h2>
+                <p class="panel-subtitle">Request Reference #BGC-CUST-8492 • Submitted 12 Sep 2026</p>
+              </div>
+            </div>
+
+            <!-- Custom Creation Status Timeline (8 Stages) -->
+            <div class="order-detail-card" style="background: var(--bg-surface-warm); border-color: var(--color-secondary-border); margin-bottom: var(--space-xl);">
+              <h3 class="heading-4" style="margin-top: 0; margin-bottom: 14px;">Creation Status</h3>
+              <div class="craft-tracking-timeline custom-tracking-timeline" id="custom-status-timeline">
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Request Submitted</div>
+                </div>
+                <div class="timeline-node done">
+                  <div class="timeline-dot">✓</div>
+                  <div class="timeline-label">Under Review</div>
+                </div>
+                <div class="timeline-node active" id="node-quote-ready">
+                  <div class="timeline-dot">●</div>
+                  <div class="timeline-label">Quote Ready</div>
+                </div>
+                <div class="timeline-node" id="node-awaiting-confirm">
+                  <div class="timeline-dot">○</div>
+                  <div class="timeline-label">Awaiting Confirmation</div>
+                </div>
+                <div class="timeline-node" id="node-in-prod">
+                  <div class="timeline-dot">○</div>
+                  <div class="timeline-label">In Production</div>
+                </div>
+                <div class="timeline-node" id="node-ready">
+                  <div class="timeline-dot">○</div>
+                  <div class="timeline-label">Ready</div>
+                </div>
+                <div class="timeline-node" id="node-shipped">
+                  <div class="timeline-dot">○</div>
+                  <div class="timeline-label">Shipped</div>
+                </div>
+                <div class="timeline-node" id="node-delivered">
+                  <div class="timeline-dot">○</div>
+                  <div class="timeline-label">Delivered</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quote Ready Acceptance Card -->
+            <div class="quote-ready-banner" id="quote-ready-banner">
+              <div>
+                <span class="badge badge-accent" style="margin-bottom: 6px;">Studio Artisan Quote</span>
+                <h3 style="font-family: var(--font-editorial); font-size: var(--text-xl); margin: 0 0 6px; color: var(--color-dark);">
+                  Your custom piece is ready for confirmation.
+                </h3>
+                <p style="font-size: var(--text-xs); color: var(--color-dark-muted); margin: 0 0 10px;">
+                  We have reviewed Milo's photos! We will hand-crochet him in combed milk cotton with caramel floppy ears and a tiny engraved brass nametag.
+                </p>
+                <div style="display: flex; gap: 16px; font-size: var(--text-sm);">
+                  <span>Price: <strong style="font-family: var(--font-editorial); font-size: var(--text-base); color: var(--color-dark);">₹1,499</strong></span>
+                  <span>Estimated completion: <strong>7–10 days</strong></span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary btn-md" onclick="acceptCustomQuote()">
+                  Accept & Continue
+                </button>
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn btn-secondary btn-md">
+                  Ask a Question
+                </a>
+              </div>
+            </div>
+
+            <!-- Request Details Box -->
+            <div class="order-detail-card">
+              <h3 class="heading-4" style="margin-top: 0; margin-bottom: 16px;">Submitted Specifications</h3>
+
+              <!-- Request Reference Images -->
+              <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted" style="display: block; font-size: var(--text-xs); margin-bottom: 8px;">Uploaded Reference Photos:</span>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <img src="assets/images/pet_plushie.jpg" alt="Milo photo 1" style="width: 72px; height: 72px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--border-card);">
+                  <img src="assets/images/bear.jpg" alt="Milo color reference" style="width: 72px; height: 72px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--border-card);">
+                </div>
+              </div>
+
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs); border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted">Customer Description:</span>
+                <span>Mini replica of my puppy Milo with floppy caramel ears and white chest patch.</span>
+              </div>
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs); border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted">Selected Category:</span>
+                <strong>Custom Plushie (Amigurumi Pet Replica)</strong>
+              </div>
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs); border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted">Preferred Colors:</span>
+                <span>Cream / Warm Ivory, Caramel Cocoa</span>
+              </div>
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs); border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted">Size:</span>
+                <span>Medium (~18–20 cm sitting)</span>
+              </div>
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs); border-bottom: 1px solid var(--border-card);">
+                <span class="text-muted">Budget:</span>
+                <span>₹1,000–₹2,000</span>
+              </div>
+              <div class="review-row" style="display: grid; grid-template-columns: 140px 1fr; padding: 8px 0; font-size: var(--text-xs);">
+                <span class="text-muted">Required-by Date:</span>
+                <strong style="color: var(--color-primary);">15 Oct 2026 (Birthday Gift)</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 7: SAVED ADDRESSES ================= -->
+          <div class="account-view-panel" id="view-panel-addresses">
+            <div class="panel-header-row">
+              <div>
+                <h2 class="panel-title">Saved Addresses</h2>
+                <p class="panel-subtitle">Manage where your handmade packages are sent across India.</p>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm" onclick="openAddAddressModal()">
+                + Add Address
+              </button>
+            </div>
+
+            <div class="addresses-grid">
+              <!-- Address 1 (Default) -->
+              <div class="address-card-item is-default" id="addr-card-1">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="address-name">Maya Sharma</span>
+                  <span class="badge badge-rose address-default-badge" style="font-size: 0.65rem;">Primary Default</span>
+                </div>
+                <div>Phone: +91 98765 43210</div>
+                <div>Flat 402, Bloom Residencies, Linking Road, Bandra West</div>
+                <div>Mumbai, Maharashtra — 400050</div>
+
+                <div class="address-actions-row">
+                  <button type="button" class="cart-item-action-link" onclick="openAddAddressModal()">Edit</button>
+                  <button type="button" class="cart-item-action-link" onclick="deleteAddress('1')">Delete</button>
+                </div>
+              </div>
+
+              <!-- Address 2 (Studio / Office) -->
+              <div class="address-card-item" id="addr-card-2">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span class="address-name">Maya Sharma (Studio)</span>
+                  <span class="badge badge-rose address-default-badge" style="font-size: 0.65rem; display: none;">Primary Default</span>
+                </div>
+                <div>Phone: +91 98765 43210</div>
+                <div>Unit 12, Maker Chambers, Nariman Point</div>
+                <div>Mumbai, Maharashtra — 400021</div>
+
+                <div class="address-actions-row">
+                  <button type="button" class="cart-item-action-link" onclick="setDefaultAddress('2')">Set as Default</button>
+                  <button type="button" class="cart-item-action-link" onclick="deleteAddress('2')">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 8: ACCOUNT SETTINGS ================= -->
+          <div class="account-view-panel" id="view-panel-settings">
+            <div class="panel-header-row">
+              <div>
+                <h2 class="panel-title">Account Settings</h2>
+                <p class="panel-subtitle">Manage personal information, security, and notification preferences.</p>
+              </div>
+            </div>
+
+            <!-- Personal Info -->
+            <div class="settings-section-card">
+              <h3 class="settings-card-title">Personal Information</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" value="Maya Sharma">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-input" value="maya.sharma@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Number</label>
+                <input type="tel" class="form-input" value="+91 98765 43210" style="max-width: 300px;">
+              </div>
+              <button type="button" class="btn btn-primary btn-sm" onclick="showAccountToast('Personal details updated ♡')">
+                Save Changes
+              </button>
+            </div>
+
+            <!-- Notifications (Simple Toggles) -->
+            <div class="settings-section-card">
+              <h3 class="settings-card-title">Notifications</h3>
+
+              <!-- Toggle 1: Order updates -->
+              <div class="toggle-setting-row">
+                <div>
+                  <div class="setting-label-text">Order Updates</div>
+                  <div class="setting-sub-text">Receive progress updates when your piece is being crocheted.</div>
+                </div>
+                <label class="ios-switch">
+                  <input type="checkbox" checked onchange="showAccountToast('Order update notifications saved')">
+                  <span class="ios-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 2: Shipping updates -->
+              <div class="toggle-setting-row">
+                <div>
+                  <div class="setting-label-text">Shipping Updates</div>
+                  <div class="setting-sub-text">SMS and WhatsApp dispatch notifications with courier tracking.</div>
+                </div>
+                <label class="ios-switch">
+                  <input type="checkbox" checked onchange="showAccountToast('Shipping notification preferences saved')">
+                  <span class="ios-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 3: Custom-order updates -->
+              <div class="toggle-setting-row">
+                <div>
+                  <div class="setting-label-text">Custom-Order Updates</div>
+                  <div class="setting-sub-text">Alerts when our artisan finishes your custom quote and preview photos.</div>
+                </div>
+                <label class="ios-switch">
+                  <input type="checkbox" checked onchange="showAccountToast('Custom-order notifications saved')">
+                  <span class="ios-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 4: New product announcements -->
+              <div class="toggle-setting-row">
+                <div>
+                  <div class="setting-label-text">New Product Announcements</div>
+                  <div class="setting-sub-text">Occasional gentle letters about seasonal crochet bouquets and gifts.</div>
+                </div>
+                <label class="ios-switch">
+                  <input type="checkbox" checked onchange="showAccountToast('Product announcement preferences saved')">
+                  <span class="ios-slider"></span>
+                </label>
+              </div>
+
+              <!-- Toggle 5: Offers -->
+              <div class="toggle-setting-row">
+                <div>
+                  <div class="setting-label-text">Offers & Studio Perks</div>
+                  <div class="setting-sub-text">Special discounts, anniversary surprises, and free gift-wrapping alerts.</div>
+                </div>
+                <label class="ios-switch">
+                  <input type="checkbox" checked onchange="showAccountToast('Offers & perks preferences saved')">
+                  <span class="ios-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Password & Security -->
+            <div class="settings-section-card">
+              <h3 class="settings-card-title">Password & Security</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label">Current Password</label>
+                  <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label">New Password</label>
+                  <input type="password" class="form-input" placeholder="••••••••">
+                </div>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="showAccountToast('Password updated securely 🔒')">
+                Update Password
+              </button>
+            </div>
+
+            <!-- Privacy -->
+            <div class="settings-section-card">
+              <h3 class="settings-card-title">Privacy</h3>
+              <p style="font-size: var(--text-xs); color: var(--color-dark-muted); line-height: var(--leading-relaxed); margin: 0 0 12px;">
+                Your privacy is deeply sacred to us. We only store information needed to lovingly handcraft and deliver your pieces. We never sell your personal data or share it with third-party advertisers.
+              </p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showAccountToast('Exporting your handmade profile data 📄')">
+                  Download My Data
+                </button>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="showAccountToast('Privacy preferences confirmed ♡')">
+                  Manage Tracking Choices
+                </button>
+              </div>
+            </div>
+
+            <!-- Saved Addresses Quick Link -->
+            <div class="settings-section-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h3 class="settings-card-title" style="margin-bottom: 4px;">Saved Addresses</h3>
+                  <p style="font-size: var(--text-xs); color: var(--color-dark-muted); margin: 0;">You have 2 saved delivery addresses for your parcels.</p>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="switchAccountView('addresses')">
+                  Manage Addresses →
+                </button>
+              </div>
+            </div>
+
+            <!-- Delete Account -->
+            <div class="settings-section-card" style="border-color: rgba(184, 80, 66, 0.2); background: rgba(255, 245, 245, 0.4);">
+              <h3 class="settings-card-title" style="color: var(--color-error);">Delete Account</h3>
+              <p style="font-size: var(--text-xs); color: var(--color-dark-muted); line-height: var(--leading-relaxed); margin: 0 0 14px;">
+                Need to take a permanent break? Deleting your account will gently erase all your saved wishlist items, custom request archives, and saved addresses.
+              </p>
+              <button type="button" class="btn btn-sm" style="background: transparent; border: 1.5px solid var(--color-error); color: var(--color-error);" onclick="confirmDeleteAccount()">
+                Delete My Account
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       ADD / EDIT ADDRESS MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="modal-card" id="add-address-modal" aria-labelledby="addr-modal-title">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" id="addr-modal-title" style="margin: 0;">Add Delivery Address</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeAddAddressModal()">✕</button>
+    </div>
+    <form onsubmit="saveNewAddress(event)">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-input" placeholder="e.g. Maya Sharma" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Flat / House / Street Address</label>
+        <input type="text" class="form-input" placeholder="Apartment, building, street" required>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="form-group">
+          <label class="form-label">City</label>
+          <input type="text" class="form-input" placeholder="Mumbai" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">PIN Code</label>
+          <input type="text" class="form-input" placeholder="400050" maxlength="6" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-md" style="width: 100%; margin-top: 10px;">
+        Save Address ♡
+      </button>
+    </form>
+  </dialog>
+
+  <!-- =========================================================================
+       SEARCH MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handleSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       MOBILE BOTTOM ACCOUNT BAR
+       ========================================================================= -->
+  <nav class="account-mobile-tabs" aria-label="Mobile Account Navigation">
+    <button type="button" class="mob-tab-btn active" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Account</span>
+    </button>
+    <button type="button" class="mob-tab-btn" data-view="orders">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      <span>Orders</span>
+    </button>
+    <button type="button" class="mob-tab-btn" data-view="wishlist">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span>Wishlist</span>
+    </button>
+    <button type="button" class="mob-tab-btn" data-view="custom">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
+      <span>Custom</span>
+    </button>
+    <button type="button" class="mob-tab-btn" data-view="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>Settings</span>
+    </button>
+  </nav>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="collections.html" class="footer-link">Collections</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+        <a href="account.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">My Account</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showAccountToast('Carefully packed in eco-kraft paper & raw linen 📦'); return false;">Gifting & Packing</a>
+        <a href="#" class="footer-link" onclick="showAccountToast('Safe insured courier across India 🇮🇳'); return false;">Shipping Info</a>
+        <a href="#" class="footer-link" onclick="showAccountToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed secure 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Welcome to your corner of handmade things.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Account Interaction Engine -->
+  <script src="js/account.js"></script>
+
+  <script>
+    function handleSearch(q) {
+      const box = document.getElementById('search-results-box');
+      if (!box) return;
+      if (!q.trim()) {
+        box.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>';
+        return;
+      }
+      box.innerHTML = `
+        <a href="shop.html" style="padding: 10px; background: var(--bg-surface-warm); border-radius: var(--radius-sm); font-size: var(--text-sm); display: block; color: var(--color-dark);">
+          Browse all results for "<strong>${q}</strong>" in Shop →
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Handmade Crochet | BabyGurl Crochet</title>
+  <meta name="description" content="Browse BabyGurl Crochet's boutique catalogue of everlasting bouquets, cozy amigurumi plushies, floral bags, and keychains. Handcrafted with love in soft cotton yarn.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Shop Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: BabyGurl Crochet Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link active" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link" id="nav-collections">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="openSearchModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="index.html#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="btn-icon cart-btn-indicator" id="btn-header-cart" onclick="openShopCartDrawer()" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count" id="header-cart-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-bottom-item" id="mob-nav-home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="shop.html" class="mobile-bottom-item active" id="mob-nav-shop">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <span>Shop</span>
+    </a>
+    <a href="index.html#custom-crochet" class="mobile-bottom-item" id="mob-nav-custom">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <span>Custom</span>
+    </a>
+    <a href="index.html#wishlist" class="mobile-bottom-item" id="mob-nav-wishlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <span>Wishlist</span>
+    </a>
+    <a href="#cart" class="mobile-bottom-item" onclick="openShopCartDrawer(); return false;" id="mob-nav-cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>
+      <span>Cart</span>
+    </a>
+  </nav>
+
+  <!-- =========================================================================
+       SHOP MAIN CONTENT
+       ========================================================================= -->
+  <main id="shop-main-content">
+
+    <!-- Top: Breadcrumb, Heading, Supporting Text -->
+    <section class="shop-header-area">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="shop-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span style="color: var(--color-dark); font-weight: var(--weight-medium);">Shop</span>
+        </nav>
+
+        <!-- Large Heading & Supporting Text -->
+        <div class="shop-title-row">
+          <h1 class="shop-headline">Shop Handmade</h1>
+          <p class="shop-subtext">Find something made to be loved, gifted, and kept.</p>
+        </div>
+
+        <!-- Category Navigation Tabs -->
+        <div class="category-tabs-wrapper">
+          <div class="category-tabs-list" role="tablist" aria-label="Categories">
+            <button type="button" class="category-tab-btn active" data-cat="All" role="tab">All</button>
+            <button type="button" class="category-tab-btn" data-cat="Flowers" role="tab">Flowers</button>
+            <button type="button" class="category-tab-btn" data-cat="Bouquets" role="tab">Bouquets</button>
+            <button type="button" class="category-tab-btn" data-cat="Amigurumi" role="tab">Amigurumi</button>
+            <button type="button" class="category-tab-btn" data-cat="Accessories" role="tab">Accessories</button>
+            <button type="button" class="category-tab-btn" data-cat="Bags" role="tab">Bags</button>
+            <button type="button" class="category-tab-btn" data-cat="Home Decor" role="tab">Home Decor</button>
+            <button type="button" class="category-tab-btn" data-cat="Keychains" role="tab">Keychains</button>
+            <button type="button" class="category-tab-btn" data-cat="Gift Sets" role="tab">Gift Sets</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Shop Area: Filter Sidebar + Responsive 4-Column Grid -->
+    <div class="container shop-main-layout">
+
+      <!-- Desktop Filter Sidebar -->
+      <aside class="filter-sidebar" aria-label="Catalogue Filters">
+        <!-- Filter 1: Craft Status -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">Craft Status</h3>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-label">
+              <input type="checkbox" class="filter-checkbox-input" name="filter_craft_state" value="Ready to Ship">
+              <span class="filter-checkbox-custom">✓</span>
+              <span>Ready to Ship</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" class="filter-checkbox-input" name="filter_craft_state" value="Made to Order">
+              <span class="filter-checkbox-custom">✓</span>
+              <span>Made to Order</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="checkbox" class="filter-checkbox-input" name="filter_craft_state" value="Customizable">
+              <span class="filter-checkbox-custom">✓</span>
+              <span>Customizable</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter 2: Availability -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">Availability</h3>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-label">
+              <input type="checkbox" class="filter-checkbox-input" id="filter-in-stock-only">
+              <span class="filter-checkbox-custom">✓</span>
+              <span>In Stock Only</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter 3: Price (₹) -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">Price Range</h3>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_price" value="all" checked>
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>All Prices</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_price" value="under-300">
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>Under ₹300</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_price" value="300-500">
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>₹300 – ₹500</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_price" value="500-800">
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>₹500 – ₹800</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_price" value="800-plus">
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>₹800 and above</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter 4: Palette & Color -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">Yarn Palette</h3>
+          <div class="filter-options-list">
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_color" value="all" checked>
+              <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+              <span>All Shades</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_color" value="dusty-rose">
+              <span style="width: 14px; height: 14px; border-radius: 50%; background: #D96C8A; display: inline-block;"></span>
+              <span>Dusty Rose</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_color" value="cream-blush">
+              <span style="width: 14px; height: 14px; border-radius: 50%; background: #F3C6D3; display: inline-block;"></span>
+              <span>Cream & Blush</span>
+            </label>
+            <label class="filter-checkbox-label">
+              <input type="radio" class="filter-checkbox-input" name="filter_color" value="honey-gold">
+              <span style="width: 14px; height: 14px; border-radius: 50%; background: #D9A441; display: inline-block;"></span>
+              <span>Honey Gold</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Reset Button -->
+        <div style="padding-top: 4px;">
+          <button type="button" class="btn btn-secondary btn-sm" style="width: 100%;" onclick="clearAllShopFilters()">
+            Clear All Filters
+          </button>
+        </div>
+      </aside>
+
+      <!-- Right Area: Toolbar, Active Filter Chips, and Responsive Grid -->
+      <section class="shop-catalog-section">
+
+        <!-- Toolbar (Count & Sort) -->
+        <div class="shop-toolbar">
+          <div class="shop-results-count">
+            Showing <strong id="shop-count-val">10 lovely creations</strong>
+          </div>
+
+          <div class="shop-controls-right">
+            <!-- Mobile Filter Trigger Button -->
+            <button type="button" class="btn btn-secondary btn-sm btn-mobile-filter-trigger" onclick="openMobileFilters()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="21" y2="21"/><line x1="4" x2="20" y1="14" y2="14"/><line x1="4" x2="20" y1="7" y2="7"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="14" r="3"/><circle cx="12" cy="21" r="3"/></svg>
+              <span>Filter & Sort</span>
+            </button>
+
+            <!-- Sort Select -->
+            <div class="sort-select-wrapper">
+              <label for="shop-sort-select">Sort:</label>
+              <select id="shop-sort-select" class="sort-select">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="popular">Most Popular</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filter Chips Bar (Populated dynamically) -->
+        <div class="active-filters-bar" id="active-filters-bar" style="display: none;"></div>
+
+        <!-- Product Grid: 4 Desktop, 3 Tablet, 2 Mobile -->
+        <div class="shop-product-grid" id="shop-product-grid">
+          <!-- Populated by shop.js:
+               1. Crochet Tulip Bouquet (₹799)
+               2. Crochet Daisy Bouquet (₹699)
+               3. Mini Crochet Bear (₹499)
+               4. Crochet Sunflower (₹349)
+               5. Flower Keychain (₹199)
+               6. Mini Mushroom Plushie (₹399)
+               7. Crochet Daisy Bag (₹999)
+               8. Crochet Heart Keychain (₹249)
+               9. Hazel the Heirloom Bunny (₹899 - Sold Out)
+               10. Heirloom Gift Wrapping Set (₹1,299)
+          -->
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       COMPACT MOBILE FILTER DRAWER (<dialog>)
+       ========================================================================= -->
+  <dialog class="mobile-filter-dialog" id="mobile-filter-drawer" aria-labelledby="mobile-filter-title">
+    <div class="drawer-header">
+      <h3 class="heading-3" id="mobile-filter-title" style="margin: 0;">Filters & Sort</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeMobileFilters()" aria-label="Close filters">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Mobile Craft Status -->
+      <div class="filter-group">
+        <h4 class="filter-group-title">Craft Status</h4>
+        <div class="filter-options-list">
+          <label class="filter-checkbox-label">
+            <input type="checkbox" class="filter-checkbox-input" name="filter_craft_state" value="Ready to Ship">
+            <span class="filter-checkbox-custom">✓</span>
+            <span>Ready to Ship</span>
+          </label>
+          <label class="filter-checkbox-label">
+            <input type="checkbox" class="filter-checkbox-input" name="filter_craft_state" value="Made to Order">
+            <span class="filter-checkbox-custom">✓</span>
+            <span>Made to Order</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Mobile Price Filter -->
+      <div class="filter-group">
+        <h4 class="filter-group-title">Price Range</h4>
+        <div class="filter-options-list">
+          <label class="filter-checkbox-label">
+            <input type="radio" class="filter-checkbox-input" name="filter_price" value="all" checked>
+            <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+            <span>All Prices</span>
+          </label>
+          <label class="filter-checkbox-label">
+            <input type="radio" class="filter-checkbox-input" name="filter_price" value="under-300">
+            <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+            <span>Under ₹300</span>
+          </label>
+          <label class="filter-checkbox-label">
+            <input type="radio" class="filter-checkbox-input" name="filter_price" value="300-500">
+            <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+            <span>₹300 – ₹500</span>
+          </label>
+          <label class="filter-checkbox-label">
+            <input type="radio" class="filter-checkbox-input" name="filter_price" value="500-800">
+            <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+            <span>₹500 – ₹800</span>
+          </label>
+          <label class="filter-checkbox-label">
+            <input type="radio" class="filter-checkbox-input" name="filter_price" value="800-plus">
+            <span class="filter-checkbox-custom" style="border-radius: 50%;">●</span>
+            <span>₹800+</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer" style="display: flex; gap: 8px;">
+      <button type="button" class="btn btn-secondary btn-sm" style="flex: 1;" onclick="clearAllShopFilters(); closeMobileFilters();">Clear</button>
+      <button type="button" class="btn btn-primary btn-sm" style="flex: 2;" onclick="closeMobileFilters()">Apply Filters</button>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       NATIVE CART DRAWER (<dialog>)
+       ========================================================================= -->
+  <dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-cart-title">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🌸</span>
+        <h3 class="heading-3" id="drawer-cart-title" style="margin: 0;">Your Basket</h3>
+      </div>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="closeShopCartDrawer()" aria-label="Close basket">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Free Shipping Perk Meter -->
+      <div class="perk-meter">
+        <div class="perk-meter-text" id="shipping-meter-text">
+          <span>Add ₹201 for Free Studio Gift Wrap</span>
+          <span>80%</span>
+        </div>
+        <div class="perk-meter-bar">
+          <div class="perk-meter-progress" id="shipping-meter-bar" style="width: 80%;"></div>
+        </div>
+      </div>
+
+      <!-- Items List -->
+      <div class="cart-items-list" id="cart-items-container">
+        <!-- Rendered by shop.js -->
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <span class="text-muted">Subtotal:</span>
+        <span style="font-family: var(--font-editorial); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-dark);" id="cart-subtotal-val">₹799</span>
+      </div>
+      <p class="text-subtle" style="margin-bottom: 14px; text-align: center;">Taxes & free studio packing included</p>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button type="button" class="btn btn-primary btn-lg" style="width: 100%;" onclick="closeShopCartDrawer(); showToast('Directing to secure studio checkout... 🌸');">
+          Checkout Now
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" style="width: 100%;" onclick="closeShopCartDrawer();">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Search Modal -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" id="site-search-input" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handleShopSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 300px; overflow-y: auto; margin-top: 12px;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain", "mushroom"</span>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 4px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="21"/><path d="M8 12a4 4 0 1 1 8 0c0 2.2-1.3 4-3 4s-1.5-.7-2-1.5L10 18"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="btn-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="collections.html" class="footer-link">Collections</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showToast('Orders dispatched carefully in 3–5 business days 📦'); return false;">Shipping</a>
+        <a href="#" class="footer-link" onclick="showToast('30-day gentle studio returns & exchanges ♡'); return false;">Returns</a>
+        <a href="#" class="footer-link" onclick="showToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+        <a href="#" class="footer-link" onclick="showToast('BabyGurl Crochet studio terms of service'); return false;">Terms</a>
+        <a href="design-system.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Design System Spec ↗</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 NetBanking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Made slowly. Loved forever.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Shop Logic Engine -->
+  <script src="js/shop.js"></script>
+
+  <script>
+    function openSearchModal() {
+      const modal = document.getElementById('search-modal');
+      if (modal) {
+        modal.showModal();
+        setTimeout(() => document.getElementById('site-search-input')?.focus(), 50);
+      }
+    }
+
+    function handleShopSearch(query) {
+      const resBox = document.getElementById('search-results-box');
+      if (!resBox) return;
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        resBox.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain", "mushroom"</span>';
+        return;
+      }
+      const matches = SHOP_PRODUCTS.filter(p => p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+      if (matches.length === 0) {
+        resBox.innerHTML = '<span class="text-subtle">No pieces found matching that term.</span>';
+        return;
+      }
+      resBox.innerHTML = matches.map(p => `
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: var(--bg-surface-warm); border-radius: var(--radius-md); border: 1px solid var(--border-card);">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="${p.image}" alt="${p.title}" style="width: 40px; height: 40px; border-radius: var(--radius-sm); object-fit: cover;">
+            <div>
+              <strong style="font-size: var(--text-sm);">${p.title}</strong>
+              <div class="text-subtle">₹${p.price.toLocaleString('en-IN')} • ${p.category}</div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary btn-sm" onclick="document.getElementById('search-modal').close(); addShopItemToCart('${p.id}');">
+            + Add
+          </button>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Collections | Moments, Occasions & Gifting | BabyGurl Crochet</title>
+  <meta name="description" content="Discover handmade crochet collections for occasions, relationships, and gifting moments. Forever flowers, personalized keepsakes, and cozy handmade treasures.">
+  <meta name="theme-color" content="#FFF9F5">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+
+  <!-- Core Design System & Collections Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/store.css">
+  <link rel="stylesheet" href="css/collections.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <span>🌸 <strong>Handmade With Love</strong></span>
+    <span>•</span>
+    <span>Free studio gift wrapping on orders over ₹1,000</span>
+    <span>•</span>
+    <a href="custom-crochet.html" style="text-decoration: underline; color: var(--color-primary);">Request Custom Piece →</a>
+  </div>
+
+  <!-- Header (Clean, Minimal, Premium) -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <!-- Left: Brand Logo -->
+      <a href="index.html" class="brand-wordmark" id="brand-logo" aria-label="BabyGurl Crochet Home">
+        <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18"/>
+          <path d="M3 12h18"/>
+          <path d="m7.5 7.5 9 9"/>
+          <path d="m16.5 7.5-9 9"/>
+        </svg>
+        <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+      </a>
+
+      <!-- Center: Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" id="nav-home">Home</a>
+        <a href="shop.html" class="nav-link" id="nav-shop">Shop</a>
+        <a href="collections.html" class="nav-link active" id="nav-collections" aria-current="page">Collections</a>
+        <a href="custom-crochet.html" class="nav-link" id="nav-custom-crochet">Custom Crochet</a>
+        <a href="index.html#contact" class="nav-link" id="nav-contact">Contact</a>
+      </nav>
+
+      <!-- Right Actions: Search, Wishlist, Account, Cart -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="btn-icon btn-icon-ghost" id="btn-header-search" onclick="document.getElementById('search-modal').showModal()" aria-label="Search Shop" title="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="index.html#wishlist" class="btn-icon btn-icon-ghost" id="btn-header-wishlist" aria-label="Wishlist" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon btn-icon-ghost" id="btn-header-account" aria-label="Account" title="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button type="button" class="btn-icon cart-btn-indicator" id="btn-header-cart" onclick="document.getElementById('cart-drawer').showModal()" aria-label="Open Shopping Basket" title="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge-count">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="collections-main-content">
+
+    <!-- =======================================================================
+         1. HERO SECTION
+         ======================================================================= -->
+    <section class="collections-hero" aria-labelledby="collections-hero-heading">
+      <div class="container collections-hero-inner">
+        <div class="collections-hero-tag">
+          <span>🌸 Curated Moments & Gifting</span>
+        </div>
+
+        <h1 class="collections-hero-title" id="collections-hero-heading">
+          Find something special.
+        </h1>
+
+        <p class="collections-hero-lead">
+          Whether you're celebrating someone, remembering a moment, or simply saying “I thought of you” — find a handmade piece for it.
+        </p>
+
+        <!-- Quick Occasion Anchor Chips -->
+        <div class="hero-quick-chips">
+          <a href="#curated-collections" class="hero-chip-btn">
+            <span>✨</span> 9 Curated Collections
+          </a>
+          <a href="#featured-flowers" class="hero-chip-btn">
+            <span>🌸</span> Flowers That Never Wilt
+          </a>
+          <a href="#gift-finder" class="hero-chip-btn">
+            <span>🎁</span> Interactive Gift Finder
+          </a>
+          <a href="#seasonal-collections" class="hero-chip-btn">
+            <span>🍂</span> Seasonal Edits
+          </a>
+          <a href="#customer-gallery" class="hero-chip-btn">
+            <span>📷</span> Real Moments Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. COLLECTION GRID (9 Large Visual Collection Cards)
+         ======================================================================= -->
+    <section class="collection-grid-section" id="curated-collections" aria-labelledby="curated-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Made To Celebrate</span>
+          <h2 class="section-title" id="curated-heading">Curated For Every Feeling</h2>
+          <p class="section-desc">Handmade pieces arranged by who they are for, how they feel, and when to give them.</p>
+        </div>
+
+        <div class="collections-card-grid">
+
+          <!-- 1. For Her ♡ -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">♡ For Someone Special</span>
+              <img src="assets/images/tulips.jpg" alt="For Her handmade crochet collection" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">For Her ♡</h3>
+              <p class="collection-card-desc">Little handmade things for someone special.</p>
+              <a href="shop.html?category=Flowers" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. Birthday 🎂 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🎂 Birthday Joy</span>
+              <img src="assets/images/bouquet.jpg" alt="Birthday crochet flower bouquet and gifts" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Birthday 🎂</h3>
+              <p class="collection-card-desc">Make their day a little more memorable.</p>
+              <a href="shop.html?category=Bouquets" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. Anniversary 🌷 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🌷 Everlasting Love</span>
+              <img src="assets/images/tulips_texture.jpg" alt="Anniversary crochet tulips that never wilt" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Anniversary 🌷</h3>
+              <p class="collection-card-desc">Something that lasts longer than the flowers.</p>
+              <a href="product-details.html" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. Best Friends 🫶 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🫶 Bestie Keepsakes</span>
+              <img src="assets/images/heart_keychain.jpg" alt="Best Friends matching crochet heart keychains" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Best Friends 🫶</h3>
+              <p class="collection-card-desc">For the person who has always been there.</p>
+              <a href="shop.html?category=Accessories" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. Just Because 💌 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">💌 Spontaneous Love</span>
+              <img src="assets/images/mushroom.jpg" alt="Just Because spontaneous cute handmade crochet gifts" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Just Because 💌</h3>
+              <p class="collection-card-desc">You don't need a reason.</p>
+              <a href="shop.html" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. Forever Flowers 🌸 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🌸 Bloom Forever</span>
+              <img src="assets/images/bouquet.jpg" alt="Forever Flowers collection of crochet bouquets" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Forever Flowers 🌸</h3>
+              <p class="collection-card-desc">Flowers that never wilt.</p>
+              <a href="#featured-flowers" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 7. Cute Little Things 🎀 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🎀 Pocket Charm</span>
+              <img src="assets/images/bear.jpg" alt="Cute Little Things miniature crochet teddy bear" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Cute Little Things 🎀</h3>
+              <p class="collection-card-desc">Tiny handmade pieces that are impossible not to love.</p>
+              <a href="shop.html?category=Amigurumi" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 8. Personalized Gifts ✨ -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">✨ Made Specifically</span>
+              <img src="assets/images/pet_plushie.jpg" alt="Personalized Gifts custom pet replica amigurumi" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Personalized Gifts ✨</h3>
+              <p class="collection-card-desc">Made specifically for someone special.</p>
+              <a href="custom-crochet.html" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 9. Home & Cozy 🏠 -->
+          <article class="collection-card">
+            <div class="collection-card-media">
+              <span class="collection-badge-tag">🏠 Warm Corners</span>
+              <img src="assets/images/sunflower.jpg" alt="Home & Cozy botanical sunflower crochet decor" class="collection-card-img" loading="lazy">
+            </div>
+            <div class="collection-card-body">
+              <h3 class="collection-card-title">Home & Cozy 🏠</h3>
+              <p class="collection-card-desc">Handmade details for a softer space.</p>
+              <a href="shop.html?category=Home%20Decor" class="collection-card-cta">
+                <span>Explore Collection</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. FEATURED COLLECTION: “Flowers That Never Wilt”
+         ======================================================================= -->
+    <section class="featured-collection-section" id="featured-flowers" aria-labelledby="featured-flowers-heading">
+      <div class="container featured-collection-grid">
+        <!-- Left: Large Hero Bouquet Showcase -->
+        <div class="featured-col-media-wrap">
+          <img src="assets/images/tulips.jpg" alt="Flowers That Never Wilt - Hand-tied crochet tulip arrangement" loading="lazy">
+          <div class="featured-pill-overlay">
+            <div>
+              <strong style="font-family: var(--font-editorial); font-size: var(--text-sm); color: var(--color-dark);">Artisanal Botanical Craft</strong>
+              <div style="font-size: 0.72rem; color: var(--color-dark-muted);">100% Cotton Yarn • Flexible Wire Stems • Free Studio Wrap</div>
+            </div>
+            <span class="badge badge-rose" style="font-size: 0.72rem;">Never Wilts</span>
+          </div>
+        </div>
+
+        <!-- Right: Storytelling & Product Companion Grid -->
+        <div>
+          <span class="section-tag">Featured Botanical Edit</span>
+          <h2 class="section-title" id="featured-flowers-heading" style="margin-top: 6px;">Flowers That Never Wilt</h2>
+          <p class="section-desc" style="margin-left: 0; text-align: left;">
+            Unlike cut flowers that fade within days, our crochet blooms stay tender and radiant year after year. Shaped petal by petal by human hands, each stem is flexible so you can pose them in your favorite vase.
+          </p>
+
+          <!-- 4 Smaller Product Cards -->
+          <div class="featured-flower-cards">
+            <!-- 1. Crochet Tulip Bouquet -->
+            <a href="product-details.html" class="featured-mini-card">
+              <img src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet">
+              <div>
+                <h4 class="featured-mini-title">Crochet Tulip Bouquet</h4>
+                <div class="featured-mini-price">₹799</div>
+              </div>
+            </a>
+
+            <!-- 2. Crochet Daisy Bouquet -->
+            <a href="shop.html?category=Bouquets" class="featured-mini-card">
+              <img src="assets/images/bouquet.jpg" alt="Crochet Daisy Bouquet">
+              <div>
+                <h4 class="featured-mini-title">Crochet Daisy Bouquet</h4>
+                <div class="featured-mini-price">₹699</div>
+              </div>
+            </a>
+
+            <!-- 3. Crochet Sunflower Bouquet -->
+            <a href="shop.html?category=Flowers" class="featured-mini-card">
+              <img src="assets/images/sunflower.jpg" alt="Crochet Sunflower Bouquet">
+              <div>
+                <h4 class="featured-mini-title">Crochet Sunflower</h4>
+                <div class="featured-mini-price">₹599</div>
+              </div>
+            </a>
+
+            <!-- 4. Mixed Flower Bouquet -->
+            <a href="shop.html?category=Bouquets" class="featured-mini-card">
+              <img src="assets/images/giftbox.jpg" alt="Mixed Flower Bouquet">
+              <div>
+                <h4 class="featured-mini-title">Mixed Flower Bouquet</h4>
+                <div class="featured-mini-price">₹999</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- CTA -->
+          <a href="shop.html?category=Flowers" class="btn btn-primary btn-lg" style="margin-top: 10px;">
+            Shop Crochet Flowers →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. INTERACTIVE GIFT FINDER (“Not sure what to choose?”)
+         ======================================================================= -->
+    <section class="gift-finder-section" id="gift-finder" aria-labelledby="gift-finder-heading">
+      <div class="container">
+        <div class="gift-finder-card">
+
+          <div class="gift-finder-intro">
+            <span class="section-tag">Interactive Assistant</span>
+            <h2 class="section-title" id="gift-finder-heading" style="margin-top: 6px;">Not sure what to choose?</h2>
+            <p class="section-desc">Tell us a little about who you're shopping for, and we'll match you with the sweetest handmade piece.</p>
+          </div>
+
+          <!-- Question 1: Who is it for? -->
+          <div class="finder-question-block">
+            <label class="finder-q-label">
+              <span class="finder-q-num">1</span>
+              <span>Who is it for?</span>
+            </label>
+            <div class="finder-pills-row" id="q1-pills">
+              <button type="button" class="finder-pill-btn active" data-val="Her">Her</button>
+              <button type="button" class="finder-pill-btn" data-val="Him">Him</button>
+              <button type="button" class="finder-pill-btn" data-val="Best Friend">Best Friend</button>
+              <button type="button" class="finder-pill-btn" data-val="Family">Family</button>
+              <button type="button" class="finder-pill-btn" data-val="Myself">Myself</button>
+              <button type="button" class="finder-pill-btn" data-val="Someone Special">Someone Special</button>
+            </div>
+          </div>
+
+          <!-- Question 2: What are you celebrating? -->
+          <div class="finder-question-block">
+            <label class="finder-q-label">
+              <span class="finder-q-num">2</span>
+              <span>What are you celebrating?</span>
+            </label>
+            <div class="finder-pills-row" id="q2-pills">
+              <button type="button" class="finder-pill-btn active" data-val="Birthday">Birthday 🎂</button>
+              <button type="button" class="finder-pill-btn" data-val="Anniversary">Anniversary 🌷</button>
+              <button type="button" class="finder-pill-btn" data-val="Graduation">Graduation 🎓</button>
+              <button type="button" class="finder-pill-btn" data-val="Just Because">Just Because 💌</button>
+              <button type="button" class="finder-pill-btn" data-val="Special Occasion">Special Occasion ✨</button>
+              <button type="button" class="finder-pill-btn" data-val="No Occasion">No Occasion ☕️</button>
+            </div>
+          </div>
+
+          <!-- Question 3: What kind of gift? -->
+          <div class="finder-question-block">
+            <label class="finder-q-label">
+              <span class="finder-q-num">3</span>
+              <span>What kind of gift?</span>
+            </label>
+            <div class="finder-pills-row" id="q3-pills">
+              <button type="button" class="finder-pill-btn active" data-val="Flowers">Flowers 🌸</button>
+              <button type="button" class="finder-pill-btn" data-val="Cute Plushie">Cute Plushie 🧸</button>
+              <button type="button" class="finder-pill-btn" data-val="Accessory">Accessory 🎀</button>
+              <button type="button" class="finder-pill-btn" data-val="Something Personalized">Something Personalized 🪄</button>
+              <button type="button" class="finder-pill-btn" data-val="Surprise Me">Surprise Me 🎁</button>
+            </div>
+          </div>
+
+          <!-- Question 4: What's your budget? -->
+          <div class="finder-question-block">
+            <label class="finder-q-label">
+              <span class="finder-q-num">4</span>
+              <span>What's your budget?</span>
+            </label>
+            <div class="finder-pills-row" id="q4-pills">
+              <button type="button" class="finder-pill-btn" data-val="Under ₹500">Under ₹500</button>
+              <button type="button" class="finder-pill-btn active" data-val="₹500–₹1,000">₹500–₹1,000</button>
+              <button type="button" class="finder-pill-btn" data-val="₹1,000–₹2,000">₹1,000–₹2,000</button>
+              <button type="button" class="finder-pill-btn" data-val="₹2,000+">₹2,000+</button>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="finder-cta-wrap">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-find-my-gift" style="padding: 14px 36px;">
+              Find My Gift ✨
+            </button>
+            <p class="text-subtle" style="font-size: var(--text-xs); margin-top: 8px;">Takes 2 seconds • Curated by human makers</p>
+          </div>
+
+          <!-- Dynamic Results Container -->
+          <div class="finder-results-box" id="finder-results-box">
+            <div class="finder-results-header">
+              <span class="badge badge-rose" style="margin-bottom: 8px;">Handcrafted Recommendations</span>
+              <h3 class="heading-2" style="margin: 0 0 6px;">Handpicked For Your Moment</h3>
+              <p class="text-subtle" id="finder-results-summary" style="font-size: var(--text-xs);"></p>
+            </div>
+
+            <div class="finder-results-grid" id="finder-results-grid">
+              <!-- Dynamically populated by js/collections.js -->
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-xl);">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="resetGiftFinder()">
+                Try Another Search ↺
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. SEASONAL COLLECTION: “Little Things for the Season”
+         ======================================================================= -->
+    <section class="seasonal-section" id="seasonal-collections" aria-labelledby="seasonal-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Seasonal Edit</span>
+          <h2 class="section-title" id="seasonal-heading">Little Things for the Season</h2>
+          <p class="section-desc">Handmade pieces carefully styled for current holidays, festive celebrations, and seasonal moments.</p>
+        </div>
+
+        <!-- Admin-Switchable Seasonal Tabs -->
+        <div class="seasonal-tabs-row" role="tablist" aria-label="Seasonal themes">
+          <button type="button" class="seasonal-tab-btn active" data-season="valentines" role="tab">
+            Valentine's Day 💌
+          </button>
+          <button type="button" class="seasonal-tab-btn" data-season="mothers-day" role="tab">
+            Mother's Day 🌸
+          </button>
+          <button type="button" class="seasonal-tab-btn" data-season="diwali" role="tab">
+            Diwali & Festive ✨
+          </button>
+          <button type="button" class="seasonal-tab-btn" data-season="christmas" role="tab">
+            Christmas & Winter 🎄
+          </button>
+          <button type="button" class="seasonal-tab-btn" data-season="birthday" role="tab">
+            Birthday Season 🎂
+          </button>
+          <button type="button" class="seasonal-tab-btn" data-season="wedding" role="tab">
+            Wedding Keepsakes 💍
+          </button>
+        </div>
+
+        <!-- 4 Curated Seasonal Product Cards -->
+        <div class="seasonal-products-grid" id="seasonal-products-grid">
+          <!-- 1 -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Valentine Signature</span>
+              <img class="product-card-img" src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title"><a href="product-details.html">Crochet Tulip Bouquet</a></h3>
+              <p class="text-subtle" style="font-size: var(--text-xs); margin: 4px 0 10px;">Soft dusty rose everlasting blooms</p>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹799</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showCollectionsToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Couple Favorite</span>
+              <img class="product-card-img" src="assets/images/heart_keychain.jpg" alt="Twin Heart Keychains" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title"><a href="shop.html?category=Accessories">Twin Heart Keychains</a></h3>
+              <p class="text-subtle" style="font-size: var(--text-xs); margin: 4px 0 10px;">Matching keepsake for two hearts</p>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹399</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showCollectionsToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Hand-Tied</span>
+              <img class="product-card-img" src="assets/images/bouquet.jpg" alt="Crochet Daisy Bouquet" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title"><a href="shop.html?category=Bouquets">Crochet Daisy Bouquet</a></h3>
+              <p class="text-subtle" style="font-size: var(--text-xs); margin: 4px 0 10px;">Blush roses & tender daisies</p>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹699</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showCollectionsToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="product-card">
+            <div class="product-card-media">
+              <span class="badge badge-linen product-card-badge">Gift Ready</span>
+              <img class="product-card-img" src="assets/images/giftbox.jpg" alt="Deluxe Keepsake Gift Box" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title"><a href="custom-crochet.html">Deluxe Keepsake Gift Box</a></h3>
+              <p class="text-subtle" style="font-size: var(--text-xs); margin: 4px 0 10px;">Wrapped in linen ribbon & dried florals</p>
+              <div class="product-card-footer">
+                <div class="product-card-price">₹1,899</div>
+                <button type="button" class="btn btn-primary btn-sm" onclick="showCollectionsToast('Added to your little basket ♡')">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. PERSONALIZED COLLECTION: “Made especially for them.”
+         ======================================================================= -->
+    <section class="personalized-section" aria-labelledby="personalized-heading">
+      <div class="container">
+        <div class="personalized-box">
+          <!-- Left: Story & CTA -->
+          <div>
+            <span class="section-tag">One-of-a-Kind</span>
+            <h2 class="section-title" id="personalized-heading" style="margin-top: 6px; text-align: left; margin-left: 0;">Made especially for them.</h2>
+            <p class="section-desc" style="text-align: left; margin-left: 0; margin-bottom: 20px;">
+              Looking for something completely unique? We hand-sculpt custom pet replicas from your photos, craft milestone dolls in your loved one's favorite outfit, and engrave wooden gift tags with your handwritten words.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+              <div style="display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--color-dark);">
+                <span style="color: var(--color-primary);">✦</span>
+                <span>Custom pet replicas crafted from your photos</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--color-dark);">
+                <span style="color: var(--color-primary);">✦</span>
+                <span>Personalized bouquet color palettes matching their home</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; font-size: var(--text-sm); color: var(--color-dark);">
+                <span style="color: var(--color-primary);">✦</span>
+                <span>Free handwritten wooden calligraphy tag included</span>
+              </div>
+            </div>
+            <a href="custom-crochet.html" class="btn btn-primary btn-lg">
+              Explore Custom Crochet →
+            </a>
+          </div>
+
+          <!-- Right: Visual Collage -->
+          <div class="personalized-collage">
+            <div class="personalized-collage-img">
+              <img src="assets/images/pet_plushie.jpg" alt="Milo custom puppy dog pet replica" loading="lazy">
+            </div>
+            <div class="personalized-collage-img">
+              <img src="assets/images/bouquet.jpg" alt="Personalized bouquet with hand-tied linen ribbon" loading="lazy">
+            </div>
+            <div class="personalized-collage-img">
+              <img src="assets/images/bear.jpg" alt="Mini couple companion dolls" loading="lazy">
+            </div>
+            <div class="personalized-collage-img">
+              <img src="assets/images/giftbox.jpg" alt="Engraved wooden tag and gift box packaging" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. CUSTOMER GALLERY: “Real gifts. Real moments.”
+         ======================================================================= -->
+    <section class="customer-gallery-section" id="customer-gallery" aria-labelledby="customer-gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Community & Gifting Love</span>
+          <h2 class="section-title" id="customer-gallery-heading">Real gifts. Real moments.</h2>
+          <p class="section-desc">Snapshots of BabyGurl Crochet pieces welcomed into cozy homes across India.</p>
+        </div>
+
+        <div class="customer-gallery-grid">
+          <!-- 1 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/tulips.jpg" alt="Birthday surprise crochet flowers on study desk" loading="lazy">
+            <div class="ugc-moment-caption">“Birthday surprise ♡”</div>
+          </div>
+          <!-- 2 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/bouquet.jpg" alt="Anniversary gift crochet bouquet in sunny living room" loading="lazy">
+            <div class="ugc-moment-caption">“Anniversary gift”</div>
+          </div>
+          <!-- 3 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/sunflower.jpg" alt="Just because crochet sunflower by window" loading="lazy">
+            <div class="ugc-moment-caption">“Just because”</div>
+          </div>
+          <!-- 4 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/heart_keychain.jpg" alt="Made for my bestie matching keychains" loading="lazy">
+            <div class="ugc-moment-caption">“Made for my bestie”</div>
+          </div>
+          <!-- 5 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/bear.jpg" alt="Study desk companion teddy bear with coffee" loading="lazy">
+            <div class="ugc-moment-caption">“Cozy desk companion ☕️”</div>
+          </div>
+          <!-- 6 -->
+          <div class="ugc-moment-card">
+            <img src="assets/images/pet_plushie.jpg" alt="Heirloom nursery pet replica keepsake" loading="lazy">
+            <div class="ugc-moment-caption">“Heirloom keepsake 🐾”</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. BOTTOM EMOTIONAL CTA: “Still looking?”
+         ======================================================================= -->
+    <section class="collections-bottom-cta" aria-labelledby="bottom-cta-heading">
+      <div class="container collections-bottom-inner">
+        <h2 class="collections-bottom-title" id="bottom-cta-heading">Still looking?</h2>
+        <p class="collections-bottom-lead">Sometimes the perfect gift is simply something handmade.</p>
+        <div class="collections-bottom-actions">
+          <a href="shop.html" class="btn btn-primary btn-lg">
+            Shop Everything
+          </a>
+          <a href="custom-crochet.html" class="btn btn-secondary btn-lg">
+            Create Something Custom
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SEARCH MODAL (<dialog>)
+       ========================================================================= -->
+  <dialog class="modal-card" id="search-modal" aria-label="Search items">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="heading-3" style="margin: 0;">Search Handmade Pieces</h3>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('search-modal').close()">✕</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Search tulips, bears, sunflowers, bags, keychains..." oninput="handleSearch(this.value)">
+    </div>
+    <div id="search-results-box" style="display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto;">
+      <span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       CART DRAWER (<dialog>)
+       ========================================================================= -->
+  <dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-title">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🌸</span>
+        <h3 class="heading-3" id="drawer-title" style="margin: 0;">Your Basket</h3>
+      </div>
+      <button type="button" class="btn-icon btn-icon-ghost" onclick="document.getElementById('cart-drawer').close()">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="cart-items-list" style="padding: 12px 0;">
+        <div class="cart-item-row">
+          <img src="assets/images/tulips.jpg" alt="Crochet Tulip Bouquet" class="cart-item-thumb">
+          <div class="cart-item-details">
+            <h4 class="cart-item-title">Crochet Tulip Bouquet</h4>
+            <span class="cart-item-variant">Pink • Small (3 Stems)</span>
+            <div class="cart-item-footer">
+              <span style="font-weight: var(--weight-semibold); font-size: var(--text-sm);">₹799</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px;">
+        <span class="text-muted">Subtotal:</span>
+        <span style="font-family: var(--font-editorial); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--color-dark);">₹799</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <a href="checkout.html" class="btn btn-primary btn-lg" style="width: 100%; text-align: center;">
+          Checkout Now →
+        </a>
+        <a href="cart.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">
+          View Basket Details
+        </a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1: Logo & Short Description -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="brand-wordmark">
+          <svg class="stitch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><path d="m7.5 7.5 9 9"/><path d="m16.5 7.5-9 9"/></svg>
+          <span>BabyGurl <span class="logo-accent">Crochet</span></span>
+        </a>
+        <p class="body-lead" style="font-size: var(--text-sm); max-width: 340px;">
+          Handmade crochet pieces created with love, one stitch at a time.
+        </p>
+        <div style="display: flex; gap: 10px; margin-top: 4px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="btn-icon" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="9" x2="12" y2="21"/><path d="M8 12a4 4 0 1 1 8 0c0 2.2-1.3 4-3 4s-1.5-.7-2-1.5L10 18"/><circle cx="12" cy="12" r="10"/></svg>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="btn-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Explore Studio</h4>
+        <a href="shop.html" class="footer-link">Shop All</a>
+        <a href="collections.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Collections</a>
+        <a href="product-details.html" class="footer-link">Tulip Bouquet</a>
+        <a href="custom-crochet.html" class="footer-link">Custom Crochet</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+
+      <!-- Col 3: Customer Care & Policies -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Customer Care</h4>
+        <a href="#" class="footer-link" onclick="showCollectionsToast('Carefully packed in eco-kraft paper & raw linen 📦'); return false;">Gifting & Packing</a>
+        <a href="#" class="footer-link" onclick="showCollectionsToast('Safe insured courier across India 🇮🇳'); return false;">Shipping Info</a>
+        <a href="#" class="footer-link" onclick="showCollectionsToast('Your privacy is 100% protected 🔒'); return false;">Privacy</a>
+        <a href="design-system.html" class="footer-link" style="color: var(--color-primary); font-weight: 500;">Design System Spec ↗</a>
+      </div>
+
+      <!-- Col 4: Safe Checkout & Payment Methods -->
+      <div class="footer-nav-col">
+        <h4 class="footer-col-title">Payment Methods</h4>
+        <p class="text-subtle" style="margin-bottom: 8px;">Guaranteed secure 256-bit encrypted checkout.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 UPI / Cards</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Visa</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">💳 Mastercard</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;"> Apple Pay</span>
+          <span class="badge badge-linen" style="font-size: 0.72rem;">🛍 NetBanking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© 2026 BabyGurl Crochet. Standalone Handmade Brand. All rights reserved.</div>
+      <div>Little things, handmade with love. Find something special.</div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Collections Interaction Engine -->
+  <script src="js/collections.js"></script>
+
+  <script>
+    function handleSearch(q) {
+      const box = document.getElementById('search-results-box');
+      if (!box) return;
+      if (!q.trim()) {
+        box.innerHTML = '<span class="text-subtle">Try: "tulip", "bear", "bag", "sunflower", "keychain"</span>';
+        return;
+      }
+      box.innerHTML = `
+        <a href="shop.html" style="padding: 10px; background: var(--bg-surface-warm); border-radius: var(--radius-sm); font-size: var(--text-sm); display: block; color: var(--color-dark);">
+          Browse all results for "<strong>${q}</strong>" in Shop →
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>
